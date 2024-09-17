@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
-            <div class="logo"><a href="#">STAY SABRA</a></div>
+        <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
+            <!-- <div class="logo"><a href="#">STAY SABRA</a></div> -->
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#services">Services</a></li>

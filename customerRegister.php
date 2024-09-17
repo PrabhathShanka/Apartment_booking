@@ -106,7 +106,7 @@ body::before {
 <body>
   <nav class="navbar">
     <div class="navdiv">
-      <div class="logo"><a href="#">E-ChargeZone</a></div>
+    <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
       <ul>
         
         <li>
