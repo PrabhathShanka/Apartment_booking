@@ -162,7 +162,7 @@ body::before {
   </div>
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 E-ChargeZone. All rights reserved.</p>
+      <p>&copy;  Copyright HMPM 2024. All Rights Reserved.</p>
     </div>
   </footer>
 </body>
