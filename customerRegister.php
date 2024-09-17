@@ -5,13 +5,14 @@ if (isset($_POST["submitCustomer"])) {
     $name = $_POST['name'];
     $addre = $_POST['address'];
     $email = $_POST['email'];
+    $userRole = $_POST['userRole'];
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
 
     require 'databaseConnection.php';
 
     if ($password1 == $password2) {
-        $sql = "INSERT INTO `customer`(`telephone_no`,`name`, `address`, `email`, `password`) VALUES ('$telNumber','$name','$addre','$email','$password1')";
+        $sql = "INSERT INTO `users`(`email`,`name`, `address`, `tel_number`, `user_role` , `password1`) VALUES ('$email','$name','$addre','$telNumber','$userRole','$password1')";
         $ret = mysqli_query($conn, $sql);
 
         if ($ret) {
@@ -120,6 +121,10 @@ body::before {
   <div class="registration-container">
     <h2>Customer Registration</h2>
     <form action="#" method="POST">
+    <div class="input-container">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+      </div>
       <div class="input-container">
         <label for="telephone">Telephone number:</label>
         <input type="tel" id="telephone" name="telephone" placeholder="Enter your telephone number" required>
@@ -133,8 +138,15 @@ body::before {
         <input type="text" id="address" name="address" placeholder="Enter your address" required>
       </div>
       <div class="input-container">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+        <label for="email">User role:</label>
+        <select class="form-select border-0" style="height: 55px;" name="userRole"required>
+                                    <option selected>--- Select User role ---</option>
+
+                                    <option value="students">Student</option>
+                                    <option value="apartmentOwner">apartment Owner</option>
+                                    
+                                    
+                                </select>
       </div>
       <div class="input-container">
         <label for="password1">Password:</label>

@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
-            <div class="logo"><a href="#">E-ChargeZone</a></div>
+            <div class="logo"><a href="#">STAY SABRA</a></div>
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -27,15 +27,19 @@
     </nav>
     <header class="hero-section">
         <div class="hero-content">
-            <h1>Welcome to E-ChargeZone</h1>
-            <p>Your one-stop solution for electric vehicle charging needs.</p>
+            <h1>Welcome to STAY SABRA</h1>
+            <p> This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants.</p>
             <a class="cta-button" href="#">Learn More</a>
         </div>
     </header>
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Us</h2>
-            <p>At E-ChargeZone, we are committed to providing the best electric vehicle charging solutions. Our network of charging stations is expanding rapidly to ensure you have access to fast, reliable, and convenient charging wherever you go.</p>
+            <p> This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants. We strive to create a transparent and convenient platform for both parties, facilitating a smooth and stress-free experience.
+
+Find the ideal boarding house to match your lifestyle and budget. Whether you're a student 
+seeking a quiet study environment or a young professional looking for a vibrant social hub, we've got you covered.
+ Our platform connects boarders with trusted owners, offering a seamless booking experience and a wide range of options to choose from. </p>
         </div>
     </section>
     <section id="services" class="services-section">

@@ -3,7 +3,7 @@
 $hostname = "localhost"; 
 $username = "root"; 
 $password = ""; 
-$database = "e_chargezone_iot_project"; 
+$database = "apartment_booking_db"; 
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 
