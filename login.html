@@ -65,6 +65,45 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin: 20px;
       }
+
+      /* Add CSS for the submit button */
+      input[type="submit"] {
+        background-color: #4caf50; /* Green background */
+        color: white; /* White text */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Hover effect for submit button */
+      input[type="submit"]:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+
+      /* Styling for the input fields */
+      .input-container input[type="text"],
+      .input-container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      /* Optional: Center the login container */
+      .login-container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Optional: Center the text in the form */
+      .login-container h2 {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -99,9 +138,9 @@
           <label for="username">Telephone Number</label>
           <input
             type="text"
-            id="username"
-            name="telNumber"
-            placeholder="Enter your Telephone Number"
+            id="emailAddress"
+            name="emailAddress"
+            placeholder="Enter your Email"
             required
           />
         </div>
@@ -115,11 +154,8 @@
             required
           />
         </div>
-        <button type="submit" name="submiLogin">
-          <a href="customer-AfterLogin.php">Login</a>
-        </button>
+        <input type="submit" name="submit" value="Login" />
         <div class="links">
-          <a href="#">Forgot password?</a>
           <a href="customerRegister.php">Sign up</a>
           <p>Admin <a href="adminlogin.php">Login</a></p>
         </div>
