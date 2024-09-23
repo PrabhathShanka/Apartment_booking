@@ -36,7 +36,8 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Us</h2>
-            <p> This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants. We strive to create a transparent and convenient platform for both parties, facilitating a smooth and stress-free experience.
+            <p> This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants. 
+                We strive to create a transparent and convenient platform for both parties, facilitating a smooth and stress-free experience.
 
 Find the ideal boarding house to match your lifestyle and budget. Whether you're a student 
 seeking a quiet study environment or a young professional looking for a vibrant social hub, we've got you covered.
@@ -48,16 +49,18 @@ seeking a quiet study environment or a young professional looking for a vibrant 
             <h2>Our Services</h2>
             <div class="service-cards">
                 <div class="service-card">
-                    <h3>Fast Charging</h3>
-                    <p>Get back on the road quickly with our fast-charging solutions.</p>
+                    <h3>Direct Booking
+                    </h3>
+                    <p>Secure your accommodation instantly with our easy booking system.
+                                Find the perfect place by filtering based on your needs and preferences.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Home Installation</h3>
-                    <p>Convenient home charging station installation services.</p>
+                    <h3> Personalized Search</h3>
+                    <p> Find the perfect place by filtering based on your needs and preferences.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Network Access</h3>
-                    <p>Access our vast network of charging stations nationwide.</p>
+                    <h3>Extensive Listings</h3>
+                    <p>Browse a wide variety of boarding houses near your university.</p>
                 </div>
             </div>
         </div>
@@ -65,7 +68,8 @@ seeking a quiet study environment or a young professional looking for a vibrant 
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. You can reach us via email at info@e-chargezone.com or call us at (123) 456-7890. We're here to help and look forward to hearing from you!</p>
+            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
+                You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
         </div>
     </section>
     <footer class="footer">

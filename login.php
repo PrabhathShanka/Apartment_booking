@@ -29,6 +29,8 @@ if (isset($_POST['emailAddress']) && isset($_POST['password'])) {
             $row = mysqli_fetch_assoc($result);
 
             if ($row['email'] === $telNum && $row['password1'] === $pass) {
+
+                $_SESSION['email'] = $telNum;
                 // Check if the user role is 'apartmentOwner' or 'students'
                 if ($row['user_role'] === 'apartmentOwner') {
                     header("Location: index-AfterLoginApartmentOwner.php");
