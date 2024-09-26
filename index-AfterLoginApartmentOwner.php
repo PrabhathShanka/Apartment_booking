@@ -10,7 +10,7 @@ if (isset($_SESSION['email'])) {
 require 'databaseConnection.php';
 
 // Fetch apartment data from the database
-$query = "SELECT * FROM Apartments";
+$query = "SELECT * FROM Apartments WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -118,16 +118,7 @@ $result = mysqli_query($conn, $query);
             <h2>Apartment Details</h2>
             <a class="cta-button" href="add_apartment.php">ADD Apartment</a><br/><br/>
             
-            <!-- Search Section -->
-            <section class="search-bar">
-                <h3>Search for Apartments</h3>
-                <form>
-                    <input type="text" placeholder="Enter location" />
-                    <input type="number" placeholder="Min Price" />
-                    <input type="number" placeholder="Max Price" />
-                    <input type="submit" value="Search" />
-                </form>
-            </section>
+
             
             <!-- Apartments Table -->
             <h3>List of Apartments</h3>
