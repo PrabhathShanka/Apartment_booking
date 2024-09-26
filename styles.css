@@ -125,3 +125,51 @@ footer {
   padding: 1rem 0;
   margin-top: 2rem;
 }
+
+/* Search Section Styling */
+.search-bar {
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background for contrast */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.search-bar h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.search-bar form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.search-bar input[type="text"],
+.search-bar input[type="number"] {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.search-bar input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
