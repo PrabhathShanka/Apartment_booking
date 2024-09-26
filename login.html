@@ -16,10 +16,83 @@
         /* Ensure the navbar stays fixed at the top */
         
         .navbar {
+            display: flex;
+            /* Use flexbox layout */
+            justify-content: space-between;
+            /* Space between items */
+            align-items: center;
+            /* Center items vertically */
+            padding: 10px 20px;
+            /* Add padding around the navbar */
+            background-color: #333;
+            /* Background color for the navbar */
             position: fixed;
+            /* Fixed position */
             top: 0;
             width: 100%;
             z-index: 1000;
+        }
+        /* Styles for the logo image */
+        
+        .navbar img {
+            width: 70px;
+            /* Width of the image */
+            height: 70px;
+            /* Height of the image */
+        }
+        /* Styling for the navigation buttons */
+        
+        .navbar ul {
+            list-style: none;
+            /* Remove default list styling */
+            padding: 0;
+            /* Remove padding */
+            margin: 0;
+            /* Remove margin */
+            display: flex;
+            /* Use flexbox for list items */
+        }
+        /* Optional: Style for list items */
+        
+        .navbar ul li {
+            margin-left: 20px;
+            /* Space between buttons */
+        }
+        /* General styles for navigation buttons */
+        
+        .navbar button {
+            background-color: #ffd900;
+            /* Button background color */
+            color: black;
+            /* Text color */
+            padding: 10px 15px;
+            /* Padding */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer on hover */
+            font-size: 16px;
+            /* Font size */
+            transition: background-color 0.3s ease, transform 0.2s;
+            /* Smooth transition */
+        }
+        /* Hover effect for buttons */
+        
+        .navbar button:hover {
+            background-color: #ff6f00;
+            /* Darker shade on hover */
+            transform: translateY(-2px);
+            /* Slight lift effect */
+        }
+        /* Active effect for buttons */
+        
+        .navbar button:active {
+            background-color: #004085;
+            /* Even darker shade when active */
+            transform: translateY(0);
+            /* Reset lift effect */
         }
         /* Add padding to the top of the body to prevent the content from being hidden behind the fixed navbar */
         
@@ -126,14 +199,16 @@
 
 <body>
     <nav class="navbar">
-        <div class="navdiv">
-            <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;" />
+        <div class="nav-left">
+            <img src="image/boarding_logo.jpg" alt="Your Image Description" />
+        </div>
+        <div class="nav-right">
             <ul>
                 <li>
-                    <button onclick="location.href='index.php'"><a>Home</a></button>
+                    <button onclick="location.href='index.php'">Home</button>
                 </li>
                 <li>
-                    <button onclick="location.href='customerRegister.php'"><a>Sign up</a></button>
+                    <button onclick="location.href='customerRegister.php'">Sign up</button>
                 </li>
             </ul>
         </div>
