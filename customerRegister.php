@@ -1,53 +1,55 @@
 <?php
 
 if (isset($_POST["submitCustomer"])) {
-    $telNumber = $_POST['telephone'];
-    $name = $_POST['name'];
-    $addre = $_POST['address'];
-    $email = $_POST['email'];
-    $userRole = $_POST['userRole'];
-    $password1 = $_POST['password1'];
-    $password2 = $_POST['password2'];
+  $telNumber = $_POST['telephone'];
+  $name = $_POST['name'];
+  $addre = $_POST['address'];
+  $email = $_POST['email'];
+  $userRole = $_POST['userRole'];
+  $password1 = $_POST['password1'];
+  $password2 = $_POST['password2'];
 
-    require 'databaseConnection.php';
+  require 'databaseConnection.php';
 
-    if ($password1 == $password2) {
-        $sql = "INSERT INTO `users`(`email`,`name`, `address`, `tel_number`, `user_role` , `password1`) VALUES ('$email','$name','$addre','$telNumber','$userRole','$password1')";
-        $ret = mysqli_query($conn, $sql);
+  if ($password1 == $password2) {
+    $sql = "INSERT INTO `users`(`email`,`name`, `address`, `tel_number`, `user_role` , `password1`) VALUES ('$email','$name','$addre','$telNumber','$userRole','$password1')";
+    $ret = mysqli_query($conn, $sql);
 
-        if ($ret) {
-            echo "No of records inserted: $ret <br>";
-           // echo "registration successfully";
+    if ($ret) {
+      echo "No of records inserted: $ret <br>";
+      // echo "registration successfully";
 
-            ?>
-		            <script type="text/javascript">
-                 var alertStyle = "padding: 10px; background-color: #f44336; color: white;";
-                alert("registration successfully !!!");
-                  window.location.href = "login.html";
-                  </script>
-				    <?php
+?>
+      <script type="text/javascript">
+        var alertStyle = "padding: 10px; background-color: #f44336; color: white;";
+        alert("registration successfully !!!");
+        window.location.href = "login.html";
+      </script>
+<?php
 
 
-          //  header("Location: login.php");
-            exit();
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-
-        // Disconnect
-        mysqli_close($conn);
+      //  header("Location: login.php");
+      exit();
     } else {
-        echo "Passwords do not match.";
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+
+    // Disconnect
+    mysqli_close($conn);
+  } else {
+    echo "Passwords do not match.";
+  }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" href="cusregister.css">
@@ -65,31 +67,55 @@ if (isset($_POST["submitCustomer"])) {
     body {
       padding-top: 60px; /* Adjust this value based on the height of your navbar */
       padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
+      margin: 0;
+      position: relative; /* Needed to position the pseudo-element */
+      background: none; /* Remove the default background */
     }
-    body {
-  padding-top: 60px; /* Adjust this value based on the height of your navbar */
-  padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
-  margin: 0;
-  position: relative; /* Needed to position the pseudo-element */
-  background: none; /* Remove the default background */
-}
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('image/img1.WEBP');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  filter: blur(5px); /* Adjust the blur amount as needed */
-  z-index: -1; /* Ensure it is behind all other content */
-}
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('image/apt.'); /* Add your background image here */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      filter: blur(5px); /* Adjust the blur amount as needed */
+      z-index: -1; /* Ensure it is behind all other content */
+    }
 
+    /* Style for input fields and select elements */
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"],
+    select {
+      background-color: #333; /* Dark background */
+      color: #fff; /* White text */
+      border: 1px solid #555; /* Optional: Darker border */
+      border-radius: 5px; /* Optional: Rounded corners */
+      padding: 10px; /* Padding for better spacing */
+      width: 100%; /* Full width */
+      margin-bottom: 15px; /* Space between input fields */
+    }
+
+    /* Change the background color of the button */
+    button {
+      background-color: #007bff; /* Bootstrap primary color */
+      color: #fff; /* White text */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Optional: Rounded corners */
+      padding: 10px; /* Padding for better spacing */
+      cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    /* Change the button color on hover */
+    button:hover {
+      background-color: #0056b3; /* Darker shade on hover */
+    }
 
     /* Footer styles to ensure it stays at the bottom */
     .footer {
@@ -101,27 +127,109 @@ body::before {
       text-align: center;
       padding: 10px 0;
     }
+
+    .navbar {
+            display: flex;
+            /* Use flexbox layout */
+            justify-content: space-between;
+            /* Space between items */
+            align-items: center;
+            /* Center items vertically */
+            padding: 10px 20px;
+            /* Add padding around the navbar */
+            background-color: #333;
+            /* Background color for the navbar */
+            position: fixed;
+            /* Fixed position */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        /* Styles for the logo image */
+        
+        .navbar img {
+            width: 70px;
+            /* Width of the image */
+            height: 70px;
+            /* Height of the image */
+        }
+        /* Styling for the navigation buttons */
+        
+        .navbar ul {
+            list-style: none;
+            /* Remove default list styling */
+            padding: 0;
+            /* Remove padding */
+            margin: 0;
+            /* Remove margin */
+            display: flex;
+            /* Use flexbox for list items */
+        }
+        /* Optional: Style for list items */
+        
+        .navbar ul li {
+            margin-left: 20px;
+            /* Space between buttons */
+        }
+        /* General styles for navigation buttons */
+        
+        .navbar button {
+            background-color: #ffd900;
+            /* Button background color */
+            color: black;
+            /* Text color */
+            padding: 10px 15px;
+            /* Padding */
+            border: none;
+            /* No border */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer on hover */
+            font-size: 16px;
+            /* Font size */
+            transition: background-color 0.3s ease, transform 0.2s;
+            /* Smooth transition */
+        }
+        /* Hover effect for buttons */
+        
+        .navbar button:hover {
+            background-color: #ff6f00;
+            /* Darker shade on hover */
+            transform: translateY(-2px);
+            /* Slight lift effect */
+        }
+        /* Active effect for buttons */
+        
+        .navbar button:active {
+            background-color: #004085;
+            /* Even darker shade when active */
+            transform: translateY(0);
+            /* Reset lift effect */
+        }
   </style>
 </head>
+
 <body>
-  <nav class="navbar">
-    <div class="navdiv">
-    <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
-      <ul>
-        
-        <li>
-          <button onclick="location.href='login.html'"><a>Sign in</a></button>
-        </li>
-        <li>
-          <button onclick="location.href='index.php'"><a>Home</a></button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="registration-container">
+<nav class="navbar">
+        <div class="nav-left">
+            <img src="image/boarding_logo.jpg" alt="Your Image Description" />
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li>
+                    <button onclick="location.href='index.php'">Home</button>
+                </li>
+                <li>
+                    <button onclick="location.href='login.html'">Sign In</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  <div class="registration-container mt-5">
     <h2>Customer Registration</h2>
     <form action="#" method="POST">
-    <div class="input-container">
+      <div class="input-container">
         <label for="email">Email:</label>
         <input type="text" id="email" name="email" placeholder="Enter your email" required>
       </div>
@@ -138,15 +246,12 @@ body::before {
         <input type="text" id="address" name="address" placeholder="Enter your address" required>
       </div>
       <div class="input-container">
-        <label for="email">User role:</label>
-        <select class="form-select border-0" style="height: 55px;" name="userRole"required>
-                                    <option selected>--- Select User role ---</option>
-
-                                    <option value="students">Student</option>
-                                    <option value="apartmentOwner">apartment Owner</option>
-                                    
-                                    
-                                </select>
+        <label for="userRole">User role:</label>
+        <select style="height: 45px;" name="userRole" required>
+          <option selected>--- Select User role ---</option>
+          <option value="students">Student</option>
+          <option value="apartmentOwner">Apartment Owner</option>
+        </select>
       </div>
       <div class="input-container">
         <label for="password1">Password:</label>
@@ -156,14 +261,15 @@ body::before {
         <label for="password2">Confirm Password:</label>
         <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
       </div>
-      <button type="submit" name="submitCustomer">Register</button>
+      <button type="submit" name="submitCustomer" class="mt-2">Register</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
+    <p class="mt-4">Already have an account? <a href="login.html">Login</a></p>
   </div>
   <footer class="footer">
     <div class="container">
-      <p>&copy;  Copyright HMPM 2024. All Rights Reserved.</p>
+      <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
     </div>
   </footer>
 </body>
+
 </html>
