@@ -194,7 +194,7 @@ if (isset($_POST["submitCustomer"])) {
         /* Hover effect for buttons */
         
         .navbar button:hover {
-            background-color: #ff6f00;
+            background-color: green;
             /* Darker shade on hover */
             transform: translateY(-2px);
             /* Slight lift effect */

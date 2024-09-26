@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="responsive.css">
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
-        <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
+            <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
             <!-- <div class="logo"><a href="#">STAY SABRA</a></div> -->
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -35,41 +37,48 @@
     </header>
     <section id="about" class="about-section">
         <div class="container">
-            <h2>About Us</h2>
-            <p> This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants. 
-                We strive to create a transparent and convenient platform for both parties, facilitating a smooth and stress-free experience.
+            <h2>
+                <hr>About Us
+                <hr>
+            </h2>
+            <p> This website is designed to bridge the gap between students in search of suitable housing and owners looking for dependable tenants. Our mission is to create a transparent, convenient platform for both parties, ensuring a smooth and stress-free experience. Whether you're a student seeking the perfect boarding house that fits your lifestyle and budget or a young professional in need of a vibrant social hub, we've got a variety of options for you. Our platform connects boarders with trusted owners, facilitating a seamless booking experience with ease.
 
-Find the ideal boarding house to match your lifestyle and budget. Whether you're a student 
-seeking a quiet study environment or a young professional looking for a vibrant social hub, we've got you covered.
- Our platform connects boarders with trusted owners, offering a seamless booking experience and a wide range of options to choose from. </p>
+                We strive to make the process of finding a home simple and efficient, offering a wide range of choices to match individual needs. Whether you're looking for a quiet study environment as a student or something more energetic and community-driven, our platform caters to all. By connecting reliable tenants with trusted owners, we ensure that every user can find the ideal boarding house without unnecessary hassle. </p>
         </div>
     </section>
     <section id="services" class="services-section">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>
+                <hr>Our Services
+                <hr>
+            </h2>
             <div class="service-cards">
                 <div class="service-card">
                     <h3>Direct Booking
                     </h3>
-                    <p>Secure your accommodation instantly with our easy booking system.
-                                Find the perfect place by filtering based on your needs and preferences.</p>
+                    <p>Secure your accommodation instantly with our hassle-free booking system. Easily find the perfect place by filtering results based on your specific needs and preferences.</p>
                 </div>
                 <div class="service-card">
                     <h3> Personalized Search</h3>
-                    <p> Find the perfect place by filtering based on your needs and preferences.</p>
+                    <p> Tailor your search to match your preferences. Filter listings to find the ideal accommodation that fits your lifestyle and requirements.</p>
                 </div>
                 <div class="service-card">
                     <h3>Extensive Listings</h3>
-                    <p>Browse a wide variety of boarding houses near your university.</p>
+                    <p>Explore a broad range of boarding houses located near your university. Our extensive listings ensure you can find the perfect fit for your needs.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
-                You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
+            <h2>
+                <hr>Contact Us
+                <hr>
+            </h2>
+            <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or want to explore more about how we can help you find the ideal boarding house, we’re here for you.
+
+                Feel free to reach out to us anytime via email at staysabra@gmail.com or give us a call at +94 455666236. Our team is always ready to assist, and we look forward to connecting with you and helping you with any inquiries you might have!</p>
         </div>
     </section>
     <footer class="footer">
@@ -107,4 +116,5 @@ seeking a quiet study environment or a young professional looking for a vibrant 
         });
     </script>
 </body>
+
 </html>

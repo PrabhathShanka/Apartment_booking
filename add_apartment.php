@@ -19,26 +19,30 @@ if (isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Apartment</title>
 
-    <!-- Internal CSS -->
+    <!-- Dark Mode CSS -->
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        padding: 50px;
+        background-color: #121212;
+        color: #e0e0e0;
+        
       }
 
       .apartment-form {
         width: 500px;
         margin: 0 auto;
-        background: white;
+        background: #1e1e1e;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-top: 50px;
       }
+      
 
       .apartment-form h2 {
         text-align: center;
         margin-bottom: 20px;
+        color: #ffffff;
       }
 
       .apartment-form form {
@@ -49,6 +53,7 @@ if (isset($_SESSION['email'])) {
       .apartment-form label {
         margin-bottom: 5px;
         font-weight: bold;
+        color: #b0b0b0;
       }
 
       .apartment-form input[type="text"],
@@ -58,23 +63,64 @@ if (isset($_SESSION['email'])) {
         margin-bottom: 15px;
         padding: 10px;
         font-size: 16px;
-        border: 1px solid #ddd;
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border: 1px solid #444444;
         border-radius: 4px;
+      }
+
+      .apartment-form input[type="text"]:focus,
+      .apartment-form input[type="email"]:focus,
+      .apartment-form input[type="file"]:focus,
+      .apartment-form textarea:focus {
+        border-color: #007bff;
+        outline: none;
       }
 
       .apartment-form input[type="submit"] {
         padding: 10px 20px;
         font-size: 16px;
-        background-color: #007bff;
+        background-color: #45a049;;
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        margin-top: 20px;
       }
 
       .apartment-form input[type="submit"]:hover {
-        background-color: #0056b3;
+        background-color: green;
       }
+
+      .apartment-form input[type="Back"] {
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: orangered;;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .apartment-form input[type="Back"]:hover {
+        background-color: red;
+      }
+
+      
+
+      .footer {
+            
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+           margin-top: 50px;
+          }
+      
     </style>
   </head>
   <body>
@@ -85,8 +131,6 @@ if (isset($_SESSION['email'])) {
         method="POST"
         enctype="multipart/form-data"
       >
-       
-
         <label for="location">Location:</label>
         <input type="text" name="location" required />
 
@@ -106,7 +150,14 @@ if (isset($_SESSION['email'])) {
         <textarea name="description" required></textarea>
 
         <input type="submit" value="Submit" />
+        <input type="Back" value="Go Back" />
       </form>
     </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
   </body>
 </html>
+
