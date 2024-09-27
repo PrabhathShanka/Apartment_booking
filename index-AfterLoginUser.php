@@ -30,15 +30,15 @@ $result = mysqli_query($conn, $query);
         .search-bar {
             width: 100%;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #c7e47e;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 20px;
+            
         }
         .search-bar h3 {
             font-size: 24px;
-            color: #333;
             margin-bottom: 20px;
         }
         .search-bar form {
@@ -52,8 +52,9 @@ $result = mysqli_query($conn, $query);
             width: 200px;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid white;
             font-size: 16px;
+            
         }
         .search-bar input[type="submit"] {
             padding: 10px 20px;
@@ -74,14 +75,16 @@ $result = mysqli_query($conn, $query);
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            
         }
         table th, table td {
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 0px solid #ddd;
             text-align: left;
+            background-color: #f4f4f4;
         }
         table th {
-            background-color: #007bff;
+            background-color: #333;
             color: white;
         }
         table tr:nth-child(even) {
@@ -89,6 +92,11 @@ $result = mysqli_query($conn, $query);
         }
         .cta-button {
             margin-bottom: 10px;
+        }
+
+        .container, h2{
+            margin-top: 40px;
+            margin-bottom: 50px;
         }
     </style>
 </head>
@@ -115,7 +123,7 @@ $result = mysqli_query($conn, $query);
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2>Apartment Details</h2>
+            <h2><hr>Apartment Details <hr></h2>
             <!-- Search Section -->
             <section class="search-bar">
                 <h3>Search for Apartments</h3>
@@ -128,7 +136,7 @@ $result = mysqli_query($conn, $query);
             </section>
             
             <!-- Apartments Table -->
-          <br/>  <h3>List of Apartments</h3>
+          <br/>  <h2><hr>List of Apartments <hr></h2>
             <table>
                 <thead>
                     <tr>
@@ -168,10 +176,10 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <section id="services" class="services-section"></section>
+    <section id="services" ></section>
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2> <hr>Contact Us <hr></h2>
             <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
                 You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
         </div>

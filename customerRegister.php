@@ -65,11 +65,15 @@ if (isset($_POST["submitCustomer"])) {
 
     /* Add padding to the top of the body to prevent the content from being hidden behind the fixed navbar */
     body {
-      padding-top: 60px; /* Adjust this value based on the height of your navbar */
-      padding-bottom: 60px; /* Add padding to the bottom to make space for the footer */
+      padding-top: 60px;
+      /* Adjust this value based on the height of your navbar */
+      padding-bottom: 60px;
+      /* Add padding to the bottom to make space for the footer */
       margin: 0;
-      position: relative; /* Needed to position the pseudo-element */
-      background: none; /* Remove the default background */
+      position: relative;
+      /* Needed to position the pseudo-element */
+      background: none;
+      /* Remove the default background */
     }
 
     body::before {
@@ -79,13 +83,16 @@ if (isset($_POST["submitCustomer"])) {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('image/apt.'); /* Add your background image here */
+      background-image: url('image/apt.');
+      /* Add your background image here */
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
-      filter: blur(5px); /* Adjust the blur amount as needed */
-      z-index: -1; /* Ensure it is behind all other content */
+      filter: blur(5px);
+      /* Adjust the blur amount as needed */
+      z-index: -1;
+      /* Ensure it is behind all other content */
     }
 
     /* Style for input fields and select elements */
@@ -93,28 +100,42 @@ if (isset($_POST["submitCustomer"])) {
     input[type="tel"],
     input[type="password"],
     select {
-      background-color: #333; /* Dark background */
-      color: #fff; /* White text */
-      border: 1px solid #555; /* Optional: Darker border */
-      border-radius: 5px; /* Optional: Rounded corners */
-      padding: 10px; /* Padding for better spacing */
-      width: 100%; /* Full width */
-      margin-bottom: 15px; /* Space between input fields */
+      background-color: #333;
+      /* Dark background */
+      color: #fff;
+      /* White text */
+      border: 1px solid #555;
+      /* Optional: Darker border */
+      border-radius: 5px;
+      /* Optional: Rounded corners */
+      padding: 10px;
+      /* Padding for better spacing */
+      width: 100%;
+      /* Full width */
+      margin-bottom: 15px;
+      /* Space between input fields */
     }
 
     /* Change the background color of the button */
     button {
-      background-color: #007bff; /* Bootstrap primary color */
-      color: #fff; /* White text */
-      border: none; /* Remove default border */
-      border-radius: 5px; /* Optional: Rounded corners */
-      padding: 10px; /* Padding for better spacing */
-      cursor: pointer; /* Pointer cursor on hover */
+      background-color: #007bff;
+      /* Bootstrap primary color */
+      color: #fff;
+      /* White text */
+      border: none;
+      /* Remove default border */
+      border-radius: 5px;
+      /* Optional: Rounded corners */
+      padding: 10px;
+      /* Padding for better spacing */
+      cursor: pointer;
+      /* Pointer cursor on hover */
     }
 
     /* Change the button color on hover */
     button:hover {
-      background-color: #0056b3; /* Darker shade on hover */
+      background-color: #0056b3;
+      /* Darker shade on hover */
     }
 
     /* Footer styles to ensure it stays at the bottom */
@@ -122,110 +143,118 @@ if (isset($_POST["submitCustomer"])) {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background-color: #333; /* Change footer color to #333 */
-      color: #fff; /* Change text color to white for better contrast */
+      background-color: #333;
+      /* Change footer color to #333 */
+      color: #fff;
+      /* Change text color to white for better contrast */
       text-align: center;
       padding: 10px 0;
     }
 
     .navbar {
-            display: flex;
-            /* Use flexbox layout */
-            justify-content: space-between;
-            /* Space between items */
-            align-items: center;
-            /* Center items vertically */
-            padding: 10px 20px;
-            /* Add padding around the navbar */
-            background-color: #333;
-            /* Background color for the navbar */
-            position: fixed;
-            /* Fixed position */
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        /* Styles for the logo image */
-        
-        .navbar img {
-            width: 70px;
-            /* Width of the image */
-            height: 70px;
-            /* Height of the image */
-        }
-        /* Styling for the navigation buttons */
-        
-        .navbar ul {
-            list-style: none;
-            /* Remove default list styling */
-            padding: 0;
-            /* Remove padding */
-            margin: 0;
-            /* Remove margin */
-            display: flex;
-            /* Use flexbox for list items */
-        }
-        /* Optional: Style for list items */
-        
-        .navbar ul li {
-            margin-left: 20px;
-            /* Space between buttons */
-        }
-        /* General styles for navigation buttons */
-        
-        .navbar button {
-            background-color: #ffd900;
-            /* Button background color */
-            color: black;
-            /* Text color */
-            padding: 10px 15px;
-            /* Padding */
-            border: none;
-            /* No border */
-            border-radius: 5px;
-            /* Rounded corners */
-            cursor: pointer;
-            /* Pointer on hover */
-            font-size: 16px;
-            /* Font size */
-            transition: background-color 0.3s ease, transform 0.2s;
-            /* Smooth transition */
-        }
-        /* Hover effect for buttons */
-        
-        .navbar button:hover {
-            background-color: green;
-            /* Darker shade on hover */
-            transform: translateY(-2px);
-            /* Slight lift effect */
-        }
-        /* Active effect for buttons */
-        
-        .navbar button:active {
-            background-color: #004085;
-            /* Even darker shade when active */
-            transform: translateY(0);
-            /* Reset lift effect */
-        }
+      display: flex;
+      /* Use flexbox layout */
+      justify-content: space-between;
+      /* Space between items */
+      align-items: center;
+      /* Center items vertically */
+      padding: 10px 20px;
+      /* Add padding around the navbar */
+      background-color: #333;
+      /* Background color for the navbar */
+      position: fixed;
+      /* Fixed position */
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Styles for the logo image */
+
+    .navbar img {
+      width: 70px;
+      /* Width of the image */
+      height: 70px;
+      /* Height of the image */
+    }
+
+    /* Styling for the navigation buttons */
+
+    .navbar ul {
+      list-style: none;
+      /* Remove default list styling */
+      padding: 0;
+      /* Remove padding */
+      margin: 0;
+      /* Remove margin */
+      display: flex;
+      /* Use flexbox for list items */
+    }
+
+    /* Optional: Style for list items */
+
+    .navbar ul li {
+      margin-left: 20px;
+      /* Space between buttons */
+    }
+
+    /* General styles for navigation buttons */
+
+    .navbar button {
+      background-color: #ffd900;
+      /* Button background color */
+      color: black;
+      /* Text color */
+      padding: 10px 15px;
+      /* Padding */
+      border: none;
+      /* No border */
+      border-radius: 5px;
+      /* Rounded corners */
+      cursor: pointer;
+      /* Pointer on hover */
+      font-size: 16px;
+      /* Font size */
+      transition: background-color 0.3s ease, transform 0.2s;
+      /* Smooth transition */
+    }
+
+    /* Hover effect for buttons */
+
+    .navbar button:hover {
+      background-color: orangered;
+      /* Darker shade on hover */
+      transform: translateY(-2px);
+      /* Slight lift effect */
+    }
+
+    /* Active effect for buttons */
+
+    .navbar button:active {
+      background-color: #004085;
+      /* Even darker shade when active */
+      transform: translateY(0);
+      /* Reset lift effect */
+    }
   </style>
 </head>
 
 <body>
-<nav class="navbar">
-        <div class="nav-left">
-            <img src="image/boarding_logo.jpg" alt="Your Image Description" />
-        </div>
-        <div class="nav-right">
-            <ul>
-                <li>
-                    <button onclick="location.href='index.php'">Home</button>
-                </li>
-                <li>
-                    <button onclick="location.href='login.html'">Sign In</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="image/boarding_logo.jpg" alt="Your Image Description" />
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li>
+          <button onclick="location.href='index.php'">Home</button>
+        </li>
+        <li>
+          <button onclick="location.href='login.html'">Sign In</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="registration-container mt-5">
     <h2>Customer Registration</h2>
     <form action="#" method="POST">

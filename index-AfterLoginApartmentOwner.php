@@ -77,11 +77,12 @@ $result = mysqli_query($conn, $query);
         }
         table th, table td {
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 0px solid #ddd;
             text-align: left;
+            background-color: #f4f4f4;
         }
         table th {
-            background-color: #007bff;
+            background-color: #333;
             color: white;
         }
         table tr:nth-child(even) {
@@ -90,6 +91,8 @@ $result = mysqli_query($conn, $query);
         .cta-button {
             margin-bottom: 10px;
         }
+
+        
     </style>
 </head>
 <body>
@@ -98,7 +101,7 @@ $result = mysqli_query($conn, $query);
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#about">Apartment details</a></li>
+                <li><a href="#about"> Apartment details</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button onclick="location.href='index.php'"><a>LOG OUT</a></button></li>
             </ul>
@@ -115,13 +118,13 @@ $result = mysqli_query($conn, $query);
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2>Apartment Details</h2>
+            <h2><hr>Apartment Details <hr></h2>
             <a class="cta-button" href="add_apartment.php">ADD Apartment</a><br/><br/>
             
 
             
             <!-- Apartments Table -->
-            <h3>List of Apartments</h3>
+            <h2><hr>List of Apartments <hr></h2>
             <table>
                 <thead>
                     <tr>
@@ -161,7 +164,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <section id="services" class="services-section"></section>
+    <section id="services"></section>
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Contact Us</h2>
