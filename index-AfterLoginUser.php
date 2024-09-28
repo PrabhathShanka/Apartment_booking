@@ -17,6 +17,7 @@ $result = mysqli_query($conn, $query);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,18 +36,21 @@ $result = mysqli_query($conn, $query);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 20px;
-            
+
         }
+
         .search-bar h3 {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
         .search-bar form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
         }
+
         .search-bar input[type="text"],
         .search-bar input[type="number"] {
             width: 200px;
@@ -54,8 +58,9 @@ $result = mysqli_query($conn, $query);
             border-radius: 5px;
             border: 1px solid white;
             font-size: 16px;
-            
+
         }
+
         .search-bar input[type="submit"] {
             padding: 10px 20px;
             background-color: #007bff;
@@ -66,40 +71,91 @@ $result = mysqli_query($conn, $query);
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+
         .search-bar input[type="submit"]:hover {
             background-color: #0056b3;
         }
-        
+
         /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            
+
         }
-        table th, table td {
+
+        table th,
+        table td {
             padding: 12px;
             border: 0px solid #ddd;
             text-align: left;
             background-color: #f4f4f4;
         }
+
         table th {
             background-color: #333;
             color: white;
         }
+
         table tr:nth-child(even) {
             background-color: #f4f4f4;
         }
+
         .cta-button {
             margin-bottom: 10px;
         }
 
-        .container, h2{
+        .container,
+        h2 {
             margin-top: 40px;
             margin-bottom: 50px;
         }
+
+        /* Fixed Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            /* Update this as needed */
+            z-index: 1000;
+            /* To ensure it stays on top of other elements */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 90px;
+            /* Adjust this to prevent content from being hidden under the navbar */
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
@@ -108,6 +164,7 @@ $result = mysqli_query($conn, $query);
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#about">Apartment details</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#settings">Settings</a></li>
                 <li><button onclick="location.href='index.php'"><a>LOG OUT</a></button></li>
             </ul>
         </div>
@@ -123,7 +180,10 @@ $result = mysqli_query($conn, $query);
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2><hr>Apartment Details <hr></h2>
+            <h2>
+                <hr>Apartment Details
+                <hr>
+            </h2>
             <!-- Search Section -->
             <section class="search-bar">
                 <h3>Search for Apartments</h3>
@@ -134,9 +194,13 @@ $result = mysqli_query($conn, $query);
                     <input type="submit" value="Search" />
                 </form>
             </section>
-            
+
             <!-- Apartments Table -->
-          <br/>  <h2><hr>List of Apartments <hr></h2>
+            <br />
+            <h2>
+                <hr>List of Apartments
+                <hr>
+            </h2>
             <table>
                 <thead>
                     <tr>
@@ -155,7 +219,7 @@ $result = mysqli_query($conn, $query);
                     // Check if there are apartments to display
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
-                        while($row = mysqli_fetch_assoc($result)) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>
                                 <td>" . $row['Apartment_ID'] . "</td>
                                 <td>" . $row['location'] . "</td>
@@ -176,11 +240,14 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <section id="services" ></section>
+    <section id="services"></section>
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2> <hr>Contact Us <hr></h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
+            <h2>
+                <hr>Contact Us
+                <hr>
+            </h2>
+            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us.
                 You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
         </div>
     </section>
@@ -192,6 +259,7 @@ $result = mysqli_query($conn, $query);
     </footer>
 
 </body>
+
 </html>
 
 <?php
