@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-    echo $email;
+    // echo $email;
 }
 
 // Database connection
@@ -119,6 +119,7 @@ $result = mysqli_query($conn, $query);
     <section id="about" class="about-section">
         <div class="container">
             <h2><hr>Apartment Details <hr></h2>
+            <br/>
             <a class="cta-button" href="add_apartment.php">ADD Apartment</a><br/><br/>
             
 

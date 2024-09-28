@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-    echo $email;
+    // echo $email;
 }
 
 // Database connection
@@ -136,18 +136,18 @@ $result = mysqli_query($conn, $query);
             </section>
             
             <!-- Apartments Table -->
-          <br/>  <h2><hr>List of Apartments <hr></h2>
+          <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
             <table>
                 <thead>
                     <tr>
-                        <th>Apartment ID</th>
+                        <!-- <th>Apartment ID</th>
                         <th>Location</th>
                         <th>GPS Tag</th>
                         <th>Image</th>
                         <th>TeleNo</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <th>Email</th>
+                        <th>Email</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -155,17 +155,38 @@ $result = mysqli_query($conn, $query);
                     // Check if there are apartments to display
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                                <td>" . $row['Apartment_ID'] . "</td>
-                                <td>" . $row['location'] . "</td>
-                                <td>" . $row['gps_tag'] . "</td>
-                                <td><img src='images/" . $row['image'] . "' width='100' height='100'></td>
-                                <td>" . $row['TeleNo'] . "</td>
-                                <td>" . $row['price'] . "</td>
-                                <td>" . $row['description'] . "</td>
-                                <td>" . $row['email'] . "</td>
-                            </tr>";
+                        while($row = mysqli_fetch_assoc($result)) { ?>
+ 
+
+
+                            <tr>
+            <td style="text-align: center; vertical-align: middle;">
+                <h1><?php echo $row["location"]; ?></h1><br>
+                <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
+                <h1>Price :- 
+                <?php echo $row["price"]; ?></h1>
+                <br>
+                <h1>Contact Number :-
+                <?php echo $row["TeleNo"]; ?></h1>
+                <br>
+                <h1>Discription :-
+                <?php echo $row["description"]; ?></h1>
+                <br>
+                <h1>GPS Code :-
+                <?php echo $row["gps_tag"]; ?>
+                </h1>
+                <br>
+
+                <h1><a href='Make_an_Appoinment.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>'>
+                    <b>| MORE DETAILS|</b></a></h1>
+                    <br>
+                
+                <hr style="border: 4px solid #FF5733;">
+
+            
+            </td>
+        </tr>
+                            <?php
                         }
                     } else {
                         echo "<tr><td colspan='8'>No apartments found.</td></tr>";
