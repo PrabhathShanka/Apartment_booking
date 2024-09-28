@@ -98,6 +98,75 @@ $result = mysqli_query($conn, $query);
             margin-top: 40px;
             margin-bottom: 50px;
         }
+        .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px; /* Increased height to make it a bit taller */
+    background-color: #333;
+    z-index: 1000; /* To ensure it stays on top of other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar Content Styling */
+.navdiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Slightly increased padding */
+}
+
+/* Navbar Image Styling */
+.navdiv img {
+    width: 60px;  /* Adjusted to fit the increased height */
+    height: 60px; /* Adjusted to fit the increased height */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Navbar Links Styling */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 15px; /* Kept spacing the same for a balanced look */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Increased padding for more height */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Styling */
+.navbar button {
+    background-color: #f00;
+    color: white;
+    border: none;
+    padding: 5px; /* Increased padding */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #d00;
+}
+
+body {
+    margin: 0;
+    padding-top: 75px; /* Match with the height of the navbar to prevent content overlap */
+}
     </style>
 </head>
 <body>

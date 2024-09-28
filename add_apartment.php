@@ -23,7 +23,7 @@ if (isset($_SESSION['email'])) {
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #121212;
+        background-color: white;
         color: #e0e0e0;
         
       }
@@ -31,7 +31,7 @@ if (isset($_SESSION['email'])) {
       .apartment-form {
         width: 500px;
         margin: 0 auto;
-        background: #1e1e1e;
+        background: #444444;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -118,7 +118,7 @@ if (isset($_SESSION['email'])) {
             color: #fff;
             text-align: center;
             padding: 10px 0;
-           margin-top: 50px;
+            margin-top: 50px;
           }
       
     </style>
