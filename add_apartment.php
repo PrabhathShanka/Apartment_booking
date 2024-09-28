@@ -150,7 +150,8 @@ if (isset($_SESSION['email'])) {
         <textarea name="description" required></textarea>
 
         <input type="submit" value="Submit" />
-        <input type="Back" value="Go Back" />
+        <input type="Back" value="Go Back" onclick="window.location.href='index-AfterLoginApartmentOwner.php';" />
+
       </form>
     </section>
     <footer class="footer">

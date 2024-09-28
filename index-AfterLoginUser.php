@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-    echo $email;
+    // echo $email;
 }
 
 // Database connection
@@ -196,22 +196,18 @@ $result = mysqli_query($conn, $query);
             </section>
 
             <!-- Apartments Table -->
-            <br />
-            <h2>
-                <hr>List of Apartments
-                <hr>
-            </h2>
+          <br/>  <h2><hr>List of Apartments <hr></h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Apartment ID</th>
+                        <!-- <th>Apartment ID</th>
                         <th>Location</th>
                         <th>GPS Tag</th>
                         <th>Image</th>
                         <th>TeleNo</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <th>Email</th>
+                        <th>Email</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -219,7 +215,7 @@ $result = mysqli_query($conn, $query);
                     // Check if there are apartments to display
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>
                                 <td>" . $row['Apartment_ID'] . "</td>
                                 <td>" . $row['location'] . "</td>
