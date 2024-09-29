@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="responsive.css">
 
     <style>
+
+        .about-section{
+            background-color: #d8caba;
+        }
         .abt {
             background-color: white;
         }
@@ -22,7 +26,7 @@
             /* Remove default margin */
         }
         body{
-            background-color: white;
+            background-color: #d8caba;
         }
 
         .srvc{
