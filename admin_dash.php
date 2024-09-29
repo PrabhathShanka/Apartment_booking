@@ -146,8 +146,23 @@ $result = mysqli_query($conn, $query);
 
             </div>
         </div>
-        <button type="button" class="btn btn-success">Approve</button>
-        <button type="button" class="btn btn-danger">NOT Approve</button>
+        <br>
+
+    
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>
+        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
+            <b>| Approve |</b>
+        </a>
+    </h2>
+    
+    <h2>
+        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
+            <b>| NOT Approve |</b>
+        </a>
+    </h2>
+</div>
+
 <br>
  <hr>
  <br>
