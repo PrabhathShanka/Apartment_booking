@@ -46,15 +46,15 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto px-5">
-                <a class="nav-item nav-link" href="admin_index.html">Booking Requests</a>
-                <a class="nav-item nav-link" href="admin_customers.html">Customers</a>
-                <a class="nav-item nav-link active" href="admin_owners.html">Owners</a>
-                <a class="nav-item nav-link" href="login.html">Sign Out</a>
+                <a class="nav-item nav-link " href="admin_dash.php">Booking Requests</a>
+                <a class="nav-item nav-link active" href="admin_customers.php">Customers</a>
+                <a class="nav-item nav-link" href="admin_owners.php">Owners</a>
+                <a class="nav-item nav-link" href="index.php">Sign Out</a>
             </div>
         </div>
     </nav>
 
-    <h2 class="text-center mb-5">Registered Owners</h2>
+    <h2 class="text-center mb-5">Registered Customers</h2>
 
     <div class="mx-5">
         <table class="table table-hover table-borderless">

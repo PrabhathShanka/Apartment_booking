@@ -1,3 +1,19 @@
+
+<?php
+session_start();
+require 'databaseConnection.php';
+
+$query = "
+    SELECT Apartments.*, facilities.*
+    FROM Apartments
+    INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
+    WHERE Apartments.adminApproving = 'pending'
+";
+$result = mysqli_query($conn, $query);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,54 +62,114 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto px-5">
-                <a class="nav-item nav-link active" href="admin_index.html">Booking Requests</a>
-                <a class="nav-item nav-link" href="admin_customers.html">Customers</a>
-                <a class="nav-item nav-link" href="admin_owners.html">Owners</a>
-                <a class="nav-item nav-link" href="login.html">Sign Out</a>
+                <a class="nav-item nav-link active" href="admin_dash.php">Booking Requests</a>
+                <a class="nav-item nav-link" href="admin_customers.php">Customers</a>
+                <a class="nav-item nav-link" href="admin_owners.php">Owners</a>
+                <a class="nav-item nav-link" href="index.php">Sign Out</a>
             </div>
         </div>
     </nav>
 
     <h2 class="text-center mb-5">Currently Pending Requests</h2>
 
-    <div class="mx-5">
-        <table class="table table-hover table-borderless">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td><button type="button" class="btn btn-success">Approve</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
 
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td><button type="button" class="btn btn-success">Approve</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td><button type="button" class="btn btn-success">Approve</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+
+
+
+
+        <section id="about" style="max-width: 1200px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+    <!-- Left side: Text details -->
+    <div style="flex: 1; padding-right: 20px;">
+        <h1 style="font-size: 28px; color: #333;"><?php echo $row["location"]; ?></h1>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Price:</strong> <?php echo $row["price"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Contact Number:</strong> <?php echo $row["TeleNo"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>GPS Code:</strong> <?php echo $row["gps_tag"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Description:</strong> <?php echo $row["description"]; ?></p>
+    </div>
+
+    <!-- Right side: Image -->
+    <div style="flex: 1;">
+        <img src="images/<?php echo $row["image"]; ?>" width="500" height="350" title="<?php echo $row['image']; ?>" style="border-radius: 10px;">
+    </div>
+</div>
+
+        <!-- Facilities Section -->
+        <div style="margin-top: 10px;">
+            <h2 style="text-align: center; font-size: 50px; color: #333;">Facilities</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(5px, 1fr)); gap: 20px; margin-top: 10px;">
+                
+               <!-- Bathroom -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/bath.png" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Bathroom</p>
+    <p>Private bathroom: <?php echo $row["Private_bathroom"]; ?><br>Toilet: <?php echo $row["Toilet"]; ?></p>
+</div>
+
+<!-- Room Amenities -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/room.jpg" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Room Amenities</p>
+    <p>Bed: <?php echo $row["Room_Amenities_Bed"]; ?><br>Mattress: <?php echo $row["Room_Amenities_Mattress"]; ?><br>Table: <?php echo $row["Room_Amenities_Table"]; ?><br>Chair: <?php echo $row["Room_Amenities_Chair"]; ?></p>
+</div>
+
+<!-- Living Area -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/living area.jpg" alt="Living Area" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Living area</p>
+    <p>Dining area: <?php echo $row["Living_area_Dining_area"]; ?><br>Sitting area: <?php echo $row["Living_area_Sitting_area"]; ?></p>
+</div>
+
+<!-- Accommodation -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/food.jpg" alt="Accommodation" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Accommodation: <?php echo $row["Accommodation"]; ?></p>
+</div>
+
+<!-- Parking -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/parking.png" alt="Parking" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Parking: <?php echo $row["Parking"]; ?></p>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <button type="button" class="btn btn-success">Approve</button>
+        <button type="button" class="btn btn-danger">NOT Approve</button>
+<br>
+ <hr>
+ <br>
+
+        <?php
+            }
+        } else {
+            echo "<p>No apartment found.</p>";
+        }
+        mysqli_close($conn);
+        ?>
+    </section>
+
+
+
+
+
+
+
+
+
+
     </div>
 </body>
 
