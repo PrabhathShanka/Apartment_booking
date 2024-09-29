@@ -1,273 +1,116 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
-
-
     $apartment_id = $_GET['id'];
-//  echo $apartment_id;
-
 }
 ?>
-
 
 <?php
 session_start();
-
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-    // echo $email;
-}
-
-// Database connection
 require 'databaseConnection.php';
 
-// Fetch apartment data from the database
-$query = "SELECT * FROM Apartments WHERE Apartment_ID = '$apartment_id'" ;
+$query = "
+    SELECT Apartments.*, facilities.*
+    FROM Apartments
+    INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
+    WHERE Apartments.Apartment_ID = '$apartment_id'
+";
 $result = mysqli_query($conn, $query);
-
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home page</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="responsive.css">
-
-    <!-- Internal CSS -->
-    <style>
-        /* Search Section Styling */
-        .search-bar {
-            width: 100%;
-            padding: 20px;
-            background-color: #c7e47e;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-top: 20px;
-            
-        }
-        .search-bar h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .search-bar form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .search-bar input[type="text"],
-        .search-bar input[type="number"] {
-            width: 200px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid white;
-            font-size: 16px;
-            
-        }
-        .search-bar input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .search-bar input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            
-        }
-        table th, table td {
-            padding: 12px;
-            border: 0px solid #ddd;
-            text-align: left;
-            background-color:  #707b7c;
-        }
-        table th {
-            background-color: #333;
-            color: white;
-        }
-        table tr:nth-child(even) {
-            background-color: #f4f4f4;
-        }
-        .cta-button {
-            margin-bottom: 10px;
-        }
-
-        .container, h2{
-            margin-top: 40px;
-            margin-bottom: 50px;
-        }
-        .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 75px; /* Increased height to make it a bit taller */
-    background-color: #333;
-    z-index: 1000; /* To ensure it stays on top of other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-}
-
-/* Navbar Content Styling */
-.navdiv {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; /* Slightly increased padding */
-}
-
-/* Navbar Image Styling */
-.navdiv img {
-    width: 60px;  /* Adjusted to fit the increased height */
-    height: 60px; /* Adjusted to fit the increased height */
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-/* Navbar Links Styling */
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.navbar li {
-    margin: 0 15px; /* Kept spacing the same for a balanced look */
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px; /* Increased padding for more height */
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-/* Button Styling */
-.navbar button {
-    background-color: #f00;
-    color: white;
-    border: none;
-    padding: 5px; /* Increased padding */
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar button:hover {
-    background-color: #d00;
-}
-
-body {
-    margin: 0;
-    padding-top: 75px; /* Match with the height of the navbar to prevent content overlap */
-}
-    </style>
 </head>
-<body>
-    <nav class="navbar" id="navbar">
-        <div class="navdiv">
+<body style="font-family: Arial, sans-serif; background-color: #f7f7f7; color: #333; margin: 0; padding-top: 75px;">
+
+    <nav style="position: fixed; top: 0; width: 100%; height: 75px; background-color: #333; display: flex; align-items: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); z-index: 1000;">
+        <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
-            <ul>
-                <li><button onclick="location.href='index-AfterLoginUser.php'"><a>BACK</a></button></li>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center;">
+                <li style="margin: 0 15px;">
+                    <button onclick="location.href='index-AfterLoginUser.php'" style="background-color: #f00; color: white; border: none; padding: 10px 20px; cursor: pointer;">BACK</button>
+                </li>
             </ul>
         </div>
     </nav>
 
+    <section id="about" style="max-width: 1200px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="text-align: center; font-size: 40px; color: #333;">Apartment Details</h2>
 
-    </header>
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+        ?>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>Apartment Details </h2>
+<div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+    <!-- Left side: Text details -->
+    <div style="flex: 1; padding-right: 20px;">
+        <h1 style="font-size: 28px; color: #333;"><?php echo $row["location"]; ?></h1>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Price:</strong> <?php echo $row["price"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Contact Number:</strong> <?php echo $row["TeleNo"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>GPS Code:</strong> <?php echo $row["gps_tag"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Description:</strong> <?php echo $row["description"]; ?></p>
+    </div>
 
-            
-            <!-- Apartments Table -->
-          <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
-            <table>
-                <thead>
-                    <tr>
-                        <!-- <th>Apartment ID</th>
-                        <th>Location</th>
-                        <th>GPS Tag</th>
-                        <th>Image</th>
-                        <th>TeleNo</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Email</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    // Check if there are apartments to display
-                    if (mysqli_num_rows($result) > 0) {
-                        // Output data for each row
-                        while($row = mysqli_fetch_assoc($result)) { ?>
- 
+    <!-- Right side: Image -->
+    <div style="flex: 1;">
+        <img src="images/<?php echo $row["image"]; ?>" width="500" height="350" title="<?php echo $row['image']; ?>" style="border-radius: 10px;">
+    </div>
+</div>
+
+        <!-- Facilities Section -->
+        <div style="margin-top: 10px;">
+            <h2 style="text-align: center; font-size: 50px; color: #333;">Facilities</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(5px, 1fr)); gap: 20px; margin-top: 10px;">
+                
+               <!-- Bathroom -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/bath.png" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Bathroom</p>
+    <p>Private bathroom: <?php echo $row["Private_bathroom"]; ?><br>Toilet: <?php echo $row["Toilet"]; ?></p>
+</div>
+
+<!-- Room Amenities -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/room.jpg" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Room Amenities</p>
+    <p>Bed: <?php echo $row["Room_Amenities_Bed"]; ?><br>Mattress: <?php echo $row["Room_Amenities_Mattress"]; ?><br>Table: <?php echo $row["Room_Amenities_Table"]; ?><br>Chair: <?php echo $row["Room_Amenities_Chair"]; ?></p>
+</div>
+
+<!-- Living Area -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/living area.jpg" alt="Living Area" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Living area</p>
+    <p>Dining area: <?php echo $row["Living_area_Dining_area"]; ?><br>Sitting area: <?php echo $row["Living_area_Sitting_area"]; ?></p>
+</div>
+
+<!-- Accommodation -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/food.jpg" alt="Accommodation" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Accommodation: <?php echo $row["Accommodation"]; ?></p>
+</div>
+
+<!-- Parking -->
+<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
+    <img src="assets/parking.png" alt="Parking" style="width: 50px; height: 50px; border-radius: 10px;">
+    <p>Parking: <?php echo $row["Parking"]; ?></p>
+</div>
 
 
-                            <tr>
-            <td style="text-align: center; vertical-align: middle;">
-                <h1><?php echo $row["location"]; ?></h1><br>
-                <img src="images/<?php echo $row["image"]; ?>" width="500" height="350" title="<?php echo $row['image']; ?>"><br>
-                <h1>Price :- 
-                <?php echo $row["price"]; ?></h1>
-                <br>
-                <h1>Contact Number :-
-                <?php echo $row["TeleNo"]; ?></h1>
-                <br>
-                <h1>Discription :-
-                <?php echo $row["description"]; ?></h1>
-                <br>
-                <h1>GPS Code :-
-                <?php echo $row["gps_tag"]; ?>
-                </h1>
-                <br>
-
-
-
-
-            
-            </td>
-            
-        </tr>
-                            <?php
-                        }
-                    } else {
-                        echo "<tr><td colspan='8'>No apartments found.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
+            </div>
         </div>
+
+        <?php
+            }
+        } else {
+            echo "<p>No apartment found.</p>";
+        }
+        mysqli_close($conn);
+        ?>
     </section>
-
-  
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
-
-<?php
-$conn->close();
-?>

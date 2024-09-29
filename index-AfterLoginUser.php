@@ -11,7 +11,7 @@ if (isset($_SESSION['email'])) {
 require 'databaseConnection.php';
 
 // Fetch apartment data from the database
-$query = "SELECT * FROM Apartments";
+$query = "SELECT * FROM Apartments WHERE adminApproving = 'Approved'";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -210,14 +210,6 @@ body {
             <table>
                 <thead>
                     <tr>
-                        <!-- <th>Apartment ID</th>
-                        <th>Location</th>
-                        <th>GPS Tag</th>
-                        <th>Image</th>
-                        <th>TeleNo</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Email</th> -->
                     </tr>
                 </thead>
                 <tbody>

@@ -193,7 +193,7 @@ body {
     <section id="about" class="about-section">
         <div class="container">
             <h2>Apartment Details</h2>
-           
+            <a class="cta-button" href="add_apartment.php">ADD Apartment</a><br/><br/>
             
             
             <!-- Apartments Table -->
@@ -230,12 +230,13 @@ body {
                 <h1>Contact Number :-
                 <?php echo $row["TeleNo"]; ?></h1>
                 <br>
-                <h1>Discription :-
-                <?php echo $row["description"]; ?></h1>
-                <br>
                 <h1>GPS Code :-
                 <?php echo $row["gps_tag"]; ?>
                 </h1>
+                <br>
+                
+                <h1>Discription <br>
+                <?php echo $row["description"]; ?></h1>
                 <br>
 
                 <h1>

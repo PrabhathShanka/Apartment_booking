@@ -143,7 +143,7 @@ if (isset($_SESSION['email'])) {
       <label for="gps_tag">GPS Tag:</label>
       <input type="text" name="gps_tag" required />
 
-      <label for="image">Apartment Image ( jpg , jpeg , png ):</label>
+      <label for="image">Apartment Main Image ( jpg , jpeg , png ):</label>
       <input type="file" name="image" accept="image/*" required />
 
       <label for="TeleNo">Telephone Number:</label>
@@ -152,50 +152,10 @@ if (isset($_SESSION['email'])) {
       <label for="price">Price ( LKR ):</label>
       <input type="text" name="price" required />
 
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
-            </label>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-lg-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
-            </label>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-lg-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
-            </label>
-          </div>
-        </div>
-      </div>
-
       <label for="description" class="mt-4">Description:</label>
       <textarea name="description" required></textarea>
 
-      <input type="submit" value="Submit" />
+      <input type="submit" value="NEXT" />
       <input type="Back" value="Go Back" onclick="window.location.href='index-AfterLoginApartmentOwner.php';" />
 
     </form>
