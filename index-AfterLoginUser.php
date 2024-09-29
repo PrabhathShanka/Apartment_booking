@@ -186,7 +186,7 @@ body {
         <div class="hero-content">
             <h1>Welcome to STAY SABRA</h1>
             <p>This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants.</p>
-            <a class="cta-button" href="#">Learn More</a>
+            <!-- <a class="cta-button" href="#">Learn More</a> -->
         </div>
     </header>
 
