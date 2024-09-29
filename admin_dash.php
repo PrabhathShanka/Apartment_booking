@@ -151,13 +151,13 @@ $result = mysqli_query($conn, $query);
     
         <div style="display: flex; justify-content: space-between; align-items: center;">
     <h2>
-        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
+        <a href='approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
             <b>| Approve |</b>
         </a>
     </h2>
     
     <h2>
-        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
+        <a href='not_approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
             <b>| NOT Approve |</b>
         </a>
     </h2>
