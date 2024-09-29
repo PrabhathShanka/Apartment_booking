@@ -32,6 +32,7 @@
             border-radius: 15px;
             margin: 10px;
         }
+        
     </style>
 </head>
 
@@ -74,6 +75,7 @@
     </section>
 
     <div class="my-5">
+    <h1 class="text-center mb-5">Our Services</h1>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6  col-lg-3 srvc">
             <h3>Direct Booking</h3>
