@@ -1,3 +1,13 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
+
+
+    $apartment_id = $_GET['id'];
+//  echo $apartment_id;
+
+}
+?>
+
 
 <?php
 session_start();
@@ -11,7 +21,7 @@ if (isset($_SESSION['email'])) {
 require 'databaseConnection.php';
 
 // Fetch apartment data from the database
-$query = "SELECT * FROM Apartments";
+$query = "SELECT * FROM Apartments WHERE Apartment_ID = '$apartment_id'" ;
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -82,7 +92,7 @@ $result = mysqli_query($conn, $query);
             padding: 12px;
             border: 0px solid #ddd;
             text-align: left;
-            background-color: #707b7c;
+            background-color:  #707b7c;
         }
         table th {
             background-color: #333;
@@ -175,35 +185,18 @@ body {
         <div class="navdiv">
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#about">Apartment details</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button onclick="location.href='index.php'"><a>LOG OUT</a></button></li>
+                <li><button onclick="location.href='index-AfterLoginUser.php'"><a>BACK</a></button></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to STAY SABRA</h1>
-            <p>This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants.</p>
-            <!-- <a class="cta-button" href="#">Learn More</a> -->
-        </div>
+
     </header>
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2><hr>Apartment Details <hr></h2>
-            <!-- Search Section -->
-            <section class="search-bar">
-                <h3>Search for Apartments</h3>
-                <form>
-                    <input type="text" placeholder="Enter location" />
-                    <input type="number" placeholder="Min Price" />
-                    <input type="number" placeholder="Max Price" />
-                    <input type="submit" value="Search" />
-                </form>
-            </section>
+            <h2>Apartment Details </h2>
+
             
             <!-- Apartments Table -->
           <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
@@ -232,22 +225,27 @@ body {
                             <tr>
             <td style="text-align: center; vertical-align: middle;">
                 <h1><?php echo $row["location"]; ?></h1><br>
-                <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
+                <img src="images/<?php echo $row["image"]; ?>" width="500" height="350" title="<?php echo $row['image']; ?>"><br>
                 <h1>Price :- 
                 <?php echo $row["price"]; ?></h1>
-
-                <h1>
-                    <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
-                <b>| MORE DETAILS |</b>
-                </a>
+                <br>
+                <h1>Contact Number :-
+                <?php echo $row["TeleNo"]; ?></h1>
+                <br>
+                <h1>Discription :-
+                <?php echo $row["description"]; ?></h1>
+                <br>
+                <h1>GPS Code :-
+                <?php echo $row["gps_tag"]; ?>
                 </h1>
+                <br>
 
-                    <br>
-                
-                    <hr style="border: 6px solid #fbfcfc; width: 100%;">
+
+
 
             
             </td>
+            
         </tr>
                             <?php
                         }
@@ -260,15 +258,7 @@ body {
         </div>
     </section>
 
-    <section id="services" ></section>
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2> <hr>Contact Us <hr></h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
-                You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
-        </div>
-    </section>
-
+  
     <footer class="footer">
         <div class="container">
             <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
