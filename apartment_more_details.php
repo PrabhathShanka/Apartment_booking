@@ -1,4 +1,15 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
+
+
+    $apartment_id = $_GET['id'];
+//  echo $apartment_id;
+
+}
+?>
+
+
+<?php
 session_start();
 
 if (isset($_SESSION['email'])) {
@@ -10,7 +21,7 @@ if (isset($_SESSION['email'])) {
 require 'databaseConnection.php';
 
 // Fetch apartment data from the database
-$query = "SELECT * FROM Apartments";
+$query = "SELECT * FROM Apartments WHERE Apartment_ID = '$apartment_id'" ;
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -184,7 +195,7 @@ body {
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2><hr>Apartment Details <hr></h2>
+            <h2>Apartment Details </h2>
 
             
             <!-- Apartments Table -->
@@ -214,7 +225,7 @@ body {
                             <tr>
             <td style="text-align: center; vertical-align: middle;">
                 <h1><?php echo $row["location"]; ?></h1><br>
-                <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
+                <img src="images/<?php echo $row["image"]; ?>" width="500" height="350" title="<?php echo $row['image']; ?>"><br>
                 <h1>Price :- 
                 <?php echo $row["price"]; ?></h1>
                 <br>
@@ -229,11 +240,7 @@ body {
                 </h1>
                 <br>
 
-                <h1><a href='Make_an_Appoinment.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>'>
-                    <b>| MORE DETAILS|</b></a></h1>
-                    <br>
-                
-                    <hr style="border: 6px solid #fbfcfc; width: 100%;">
+
 
 
             

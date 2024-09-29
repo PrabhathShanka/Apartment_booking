@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -234,17 +235,6 @@ body {
                 <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
                 <h1>Price :- 
                 <?php echo $row["price"]; ?></h1>
-                <br>
-                <h1>Contact Number :-
-                <?php echo $row["TeleNo"]; ?></h1>
-                <br>
-                <h1>Discription :-
-                <?php echo $row["description"]; ?></h1>
-                <br>
-                <h1>GPS Code :-
-                <?php echo $row["gps_tag"]; ?>
-                </h1>
-                <br>
 
                 <h1>
                     <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
