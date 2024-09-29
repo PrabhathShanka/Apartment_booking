@@ -200,16 +200,7 @@ body {
           <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
             <table>
                 <thead>
-                    <tr>
-                        <!-- <th>Apartment ID</th>
-                        <th>Location</th>
-                        <th>GPS Tag</th>
-                        <th>Image</th>
-                        <th>TeleNo</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Email</th> -->
-                    </tr>
+
                 </thead>
                 <tbody>
                     <?php
@@ -222,7 +213,7 @@ body {
 
                             <tr>
             <td style="text-align: center; vertical-align: middle;">
-                <h1><?php echo $row["location"]; ?></h1><br>
+                <h1><?php echo $row["location"]; ?>   (<?php echo $row["adminApproving"]; ?>)</h1><br>
                 <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
                 <h1>Price :- 
                 <?php echo $row["price"]; ?></h1>
@@ -241,7 +232,7 @@ body {
 
                 <h1>
                     <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
-                <b>| EDIT DETAILS |</b>
+                <b>| DELETE |</b>
                 </a>
                 </h1>
 
