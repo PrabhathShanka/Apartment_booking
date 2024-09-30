@@ -12,8 +12,8 @@ if (isset($_GET['Apartment_ID'])) {
         // Step 3: If successful, show an alert and redirect
         ?>
         <script type="text/javascript">
-            alert("Apartment deleted successfully!");
-            window.location.href = "admin_Approve_List.php"; // Redirect to the approval list
+            alert("NOT Approve Apartment deleted Successfully!");
+            window.location.href = "admin_NOT_Approve_List.php"; // Redirect to the approval list
         </script>
         <?php
         exit(); // Stop further execution

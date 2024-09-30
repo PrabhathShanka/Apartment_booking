@@ -150,11 +150,12 @@ $result = mysqli_query($conn, $query);
         <div style="display: flex; justify-content: space-between; align-items: center;">
 
     
-    <h2>
-        <a href='admin_delete_apartment.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
-            <b>| DELETE |</b>
-        </a>
-    </h2>
+    
+        <h2>
+    <a href='admin_delete_Not_App_apartment.php?Apartment_ID=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
+        <b>| DELETE |</b>
+    </a>
+        </h2>
 </div>
 
 <br>
