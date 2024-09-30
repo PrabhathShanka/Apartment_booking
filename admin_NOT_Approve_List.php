@@ -64,6 +64,7 @@ $result = mysqli_query($conn, $query);
             <div class="navbar-nav ml-auto px-5">
                 <a class="nav-item nav-link active" href="admin_dash.php">Booking Requests</a>
                 <a class="nav-item nav-link active" href="admin_NOT_Approve_List.php">NOT Approve List</a>
+                <a class="nav-item nav-link active" href="admin_Approve_List.php">Approve List</a>
                 <a class="nav-item nav-link" href="admin_customers.php">Customers</a>
                 <a class="nav-item nav-link" href="admin_owners.php">Owners</a>
                 <a class="nav-item nav-link" href="index.php">Sign Out</a>
@@ -71,7 +72,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </nav>
 
-    <h2 class="text-center mb-5">Currently Pending Requests</h2>
+    <h2 class="text-center mb-5">Currently Not Approve Requests</h2>
 
 
 
@@ -89,9 +90,10 @@ $result = mysqli_query($conn, $query);
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
     <!-- Left side: Text details -->
     <div style="flex: 1; padding-right: 20px;">
-        <h1 style="font-size: 28px; color: #333;"><?php echo $row["location"]; ?></h1>
+        <h1 style="font-size: 28px; color: #333;"><b><?php echo $row["location"]; ?></b></h1>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Price:</strong> <?php echo $row["price"]; ?></p>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Contact Number:</strong> <?php echo $row["TeleNo"]; ?></p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>Email:</strong> <?php echo $row["email"]; ?></p>
         <p style="font-size: 18px; margin: 10px 0;"><strong>GPS Code:</strong> <?php echo $row["gps_tag"]; ?></p>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Description:</strong> <?php echo $row["description"]; ?></p>
     </div>

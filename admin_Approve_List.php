@@ -7,7 +7,7 @@ $query = "
     SELECT Apartments.*, facilities.*
     FROM Apartments
     INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
-    WHERE Apartments.adminApproving = 'pending'
+    WHERE Apartments.adminApproving = 'Approved'
 ";
 $result = mysqli_query($conn, $query);
 ?>
@@ -72,7 +72,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </nav>
 
-    <h2 class="text-center mb-5">Currently Pending Requests</h2>
+    <h2 class="text-center mb-5">Currently Approve Requests</h2>
 
 
 
@@ -90,7 +90,7 @@ $result = mysqli_query($conn, $query);
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
     <!-- Left side: Text details -->
     <div style="flex: 1; padding-right: 20px;">
-    <h1 style="font-size: 28px; color: #333;"><b><?php echo $row["location"]; ?></b></h1>
+        <h1 style="font-size: 28px; color: #333;"><b><?php echo $row["location"]; ?></b></h1>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Price:</strong> <?php echo $row["price"]; ?></p>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Contact Number:</strong> <?php echo $row["TeleNo"]; ?></p>
         <p style="font-size: 18px; margin: 10px 0;"><strong>Email:</strong> <?php echo $row["email"]; ?></p>
@@ -153,15 +153,10 @@ $result = mysqli_query($conn, $query);
 
     
         <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h2>
-        <a href='approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
-            <b>| Approve |</b>
-        </a>
-    </h2>
     
-    <h2>
-        <a href='not_approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
-            <b>| NOT Approve |</b>
+        <h2>
+        <a href='not_approve_request_delete.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
+            <b>| DELETE |</b>
         </a>
     </h2>
 </div>

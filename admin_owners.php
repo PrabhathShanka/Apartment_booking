@@ -48,6 +48,7 @@
             <div class="navbar-nav ml-auto px-5">
                 <a class="nav-item nav-link" href="admin_dash.php">Booking Requests</a>
                 <a class="nav-item nav-link active" href="admin_NOT_Approve_List.php">NOT Approve List</a>
+                <a class="nav-item nav-link active" href="admin_Approve_List.php">Approve List</a>
                 <a class="nav-item nav-link" href="admin_customers.php">Customers</a>
                 <a class="nav-item nav-link active" href="admin_owners.php">Owners</a>
                 <a class="nav-item nav-link" href="index.php">Sign Out</a>
