@@ -200,7 +200,7 @@ $result = mysqli_query($conn, $query);
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
-            <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
+            <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 60px; height: 60px; vertical-align: middle; margin-right: 10px;">
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#about">Apartment details</a></li>
