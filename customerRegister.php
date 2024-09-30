@@ -3,7 +3,6 @@
 if (isset($_POST["submitCustomer"])) {
   $telNumber = $_POST['telephone'];
   $name = $_POST['name'];
-  $addre = $_POST['address'];
   $email = $_POST['email'];
   $userRole = $_POST['userRole'];
   $password1 = $_POST['password1'];
@@ -12,7 +11,7 @@ if (isset($_POST["submitCustomer"])) {
   require 'databaseConnection.php';
 
   if ($password1 == $password2) {
-    $sql = "INSERT INTO `users`(`email`,`name`, `address`, `tel_number`, `user_role` , `password1`) VALUES ('$email','$name','$addre','$telNumber','$userRole','$password1')";
+    $sql = "INSERT INTO `users`(`email`,`name`, `tel_number`, `user_role` , `password1`) VALUES ('$email','$name','$telNumber','$userRole','$password1')";
     $ret = mysqli_query($conn, $sql);
 
     if ($ret) {
@@ -269,10 +268,6 @@ if (isset($_POST["submitCustomer"])) {
       <div class="input-container">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      </div>
-      <div class="input-container">
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" placeholder="Enter your address" required>
       </div>
       <div class="input-container">
         <label for="userRole">User role:</label>

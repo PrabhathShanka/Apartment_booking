@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2024 at 04:15 PM
+-- Generation Time: Sep 30, 2024 at 06:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,7 +77,6 @@ CREATE TABLE `apartments` (
 CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `address` varchar(50) NOT NULL,
   `tel_number` int(10) NOT NULL,
   `user_role` varchar(50) NOT NULL,
   `password1` varchar(50) NOT NULL

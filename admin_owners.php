@@ -76,7 +76,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "<tr style='background-color: #f2f2f2;'>";
     echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Email</th>";
     echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Name</th>";
-    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Address</th>";
     echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Telephone Number</th>";
     echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Action</th>";
     echo "</tr>";
@@ -86,7 +85,6 @@ if (mysqli_num_rows($result) > 0) {
         echo "<tr style='border: 1px solid #ddd;'>";
         echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['email']) . "</td>";
         echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['name']) . "</td>";
-        echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['address']) . "</td>";
         echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['tel_number']) . "</td>";
 
         // Add the "Action" column with a delete button, styled inline
