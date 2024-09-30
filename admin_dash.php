@@ -3,13 +3,7 @@
 session_start();
 require 'databaseConnection.php';
 
-
-$query = "
-    SELECT Apartments.*, facilities.*
-    FROM Apartments
-    INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
-    WHERE Apartments.adminApproving ='pending'
-";
+$query = "SELECT * FROM Apartments WHERE adminApproving = 'pending'";
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -104,46 +98,7 @@ $result = mysqli_query($conn, $query);
     </div>
 </div>
 
-        <!-- Facilities Section -->
-        <div style="margin-top: 10px;">
-            <h2 style="text-align: center; font-size: 50px; color: #333;">Facilities</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(5px, 1fr)); gap: 20px; margin-top: 10px;">
-                
-               <!-- Bathroom -->
-<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
-    <img src="assets/bath.png" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
-    <p>Bathroom</p>
-    <p>Private bathroom: <?php echo $row["Private_bathroom"]; ?><br>Toilet: <?php echo $row["Toilet"]; ?></p>
-</div>
-
-<!-- Room Amenities -->
-<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
-    <img src="assets/room.jpg" alt="Room Amenities" style="width: 50px; height: 50px; border-radius: 10px;">
-    <p>Room Amenities</p>
-    <p>Bed: <?php echo $row["Room_Amenities_Bed"]; ?><br>Mattress: <?php echo $row["Room_Amenities_Mattress"]; ?><br>Table: <?php echo $row["Room_Amenities_Table"]; ?><br>Chair: <?php echo $row["Room_Amenities_Chair"]; ?></p>
-</div>
-
-<!-- Living Area -->
-<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
-    <img src="assets/living area.jpg" alt="Living Area" style="width: 50px; height: 50px; border-radius: 10px;">
-    <p>Living area</p>
-    <p>Dining area: <?php echo $row["Living_area_Dining_area"]; ?><br>Sitting area: <?php echo $row["Living_area_Sitting_area"]; ?></p>
-</div>
-
-<!-- Accommodation -->
-<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
-    <img src="assets/food.jpg" alt="Accommodation" style="width: 50px; height: 50px; border-radius: 10px;">
-    <p>Accommodation: <?php echo $row["Accommodation"]; ?></p>
-</div>
-
-<!-- Parking -->
-<div style="background-color: #f1f1f1; border-radius: 100px; text-align: center; padding: 20px;">
-    <img src="assets/parking.png" alt="Parking" style="width: 50px; height: 50px; border-radius: 10px;">
-    <p>Parking: <?php echo $row["Parking"]; ?></p>
-</div>
-
-
-
+     
 
 
 
