@@ -3,12 +3,7 @@
 session_start();
 require 'databaseConnection.php';
 
-$query = "
-    SELECT Apartments.*, facilities.*
-    FROM Apartments
-    INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
-    WHERE Apartments.adminApproving = 'Approved'
-";
+$query = "SELECT * FROM Apartments WHERE adminApproving = 'Approved'";
 $result = mysqli_query($conn, $query);
 ?>
 

@@ -155,7 +155,69 @@ if (isset($_SESSION['email'])) {
       <label for="description" class="mt-4">Description:</label>
       <textarea name="description" required></textarea>
 
-      <input type="submit" value="NEXT" />
+
+
+
+      <h2>Select Facilities</h2>
+        <form action="" method="POST">
+            <div class="radio-group">
+                <label>Private Bathroom:</label>
+                <input type="radio" name="private_bathroom" value="YES" required> Yes
+                <input type="radio" name="private_bathroom" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Toilet:</label>
+                <input type="radio" name="toilet" value="YES" required> Yes
+                <input type="radio" name="toilet" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Room Amenities - Bed:</label>
+                <input type="radio" name="room_bed" value="YES" required> Yes
+                <input type="radio" name="room_bed" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Room Amenities - Mattress:</label>
+                <input type="radio" name="room_mattress" value="YES" required> Yes
+                <input type="radio" name="room_mattress" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Room Amenities - Table:</label>
+                <input type="radio" name="room_table" value="YES" required> Yes
+                <input type="radio" name="room_table" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Room Amenities - Chair:</label>
+                <input type="radio" name="room_chair" value="YES" required> Yes
+                <input type="radio" name="room_chair" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Living Area - Dining Area:</label>
+                <input type="radio" name="dining_area" value="YES" required> Yes
+                <input type="radio" name="dining_area" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Living Area - Sitting Area:</label>
+                <input type="radio" name="sitting_area" value="YES" required> Yes
+                <input type="radio" name="sitting_area" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Accommodation:</label>
+                <input type="radio" name="accommodation" value="YES" required> Yes
+                <input type="radio" name="accommodation" value="NO" required> No
+            </div>
+            <div class="radio-group">
+                <label>Parking:</label>
+                <input type="radio" name="parking" value="YES" required> Yes
+                <input type="radio" name="parking" value="NO" required> No
+            </div>
+
+
+
+
+
+
+
+      <input type="submit" value="SUBMIT" />
       <input type="Back" value="Go Back" onclick="window.location.href='index-AfterLoginApartmentOwner.php';" />
 
     </form>

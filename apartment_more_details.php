@@ -8,12 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 session_start();
 require 'databaseConnection.php';
 
-$query = "
-    SELECT Apartments.*, facilities.*
-    FROM Apartments
-    INNER JOIN facilities ON Apartments.Apartment_ID = facilities.Apartment_ID
-    WHERE Apartments.Apartment_ID = '$apartment_id'
-";
+
+
+$query = "SELECT * FROM Apartments WHERE Apartment_ID = '$apartment_id'";
 $result = mysqli_query($conn, $query);
 ?>
 

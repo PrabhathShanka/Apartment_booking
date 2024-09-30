@@ -18,6 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $description = $_POST['description'];
 
+    $private_bathroom = $_POST['private_bathroom'];
+    $toilet = $_POST['toilet'];
+    $room_bed = $_POST['room_bed'];
+    $room_mattress = $_POST['room_mattress'];
+    $room_table = $_POST['room_table'];
+    $room_chair = $_POST['room_chair'];
+    $dining_area = $_POST['dining_area'];
+    $sitting_area = $_POST['sitting_area'];
+    $accommodation = $_POST['accommodation'];
+    $parking = $_POST['parking'];
+
     // Handle image upload
     if ($_FILES["image"]["error"] === 4) {
         echo "<script> alert('Image Does Not Exist')</script>";
@@ -42,19 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $approving = "pending";
 
             // Insert apartment data into the database
-            $query = "INSERT INTO Apartments (location, gps_tag, image, TeleNo, price, description, email, adminApproving)
-                      VALUES ('$location', '$gps_tag', '$newImageName', '$teleNo', '$price', '$description', '$email', '$approving')";
+            $query = "INSERT INTO Apartments (location, gps_tag, image, TeleNo, price, description, email, adminApproving, Private_bathroom, Toilet, Room_Amenities_Bed, Room_Amenities_Mattress, Room_Amenities_Table, Room_Amenities_Chair, Living_area_Dining_area, Living_area_Sitting_area, Accommodation, Parking)
+                      VALUES ('$location', '$gps_tag', '$newImageName', '$teleNo', '$price', '$description', '$email', '$approving', '$private_bathroom', '$toilet', '$room_bed', '$room_mattress', '$room_table', '$room_chair', '$dining_area', '$sitting_area', '$accommodation', '$parking')";
 
             if (mysqli_query($conn, $query)) {
-                // Get the last inserted Apartment_ID
-                $lastApartmentID = mysqli_insert_id($conn);
-
-                // Store Apartment_ID in the session to carry it forward
-                $_SESSION['lastApartmentID'] = $lastApartmentID;
 
                 echo "<script>
-                        alert('Registration is successful! Apartment ID: $lastApartmentID');
-                        document.location.href = 'insert_facilities.php';
+                        alert('ADD Apartment is successful! Email Address: $email');
+                        document.location.href = 'index-AfterLoginApartmentOwner.php';
                       </script>";
             } else {
                 echo "<script> alert('Error: Could not insert data.');</script>";
