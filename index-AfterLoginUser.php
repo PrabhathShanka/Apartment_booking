@@ -278,7 +278,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <div class="mb-5">
+    <div class="mb-5" id="contact">
         <div class="row d-flex justify-content-center mx-5">
             <div class="col-sm-12 col-lg-6 m-4 p-3">
                 <h2><b>About Stay Sabra</b></h2>
