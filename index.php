@@ -44,24 +44,39 @@
 </head>
 
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="navdiv">
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+        <!-- Left-aligned logo -->
+        <a class="navbar-brand" href="#">
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
-            <!-- <div class="logo"><a href="#">STAY SABRA</a></div> -->
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <button onclick="location.href='login.html'"><a>Sign in</a></button>
+        </a>
+        <!-- Toggle button for mobile view -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Right-aligned navigation items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item">
+                <button onclick="location.href='login.html'"><a>Sign in</a></button>
                 </li>
-                <li>
-                    <button onclick="location.href='customerRegister.php'"><a>Sign up</a></button>
+                <li class="nav-item">
+                <button onclick="location.href='customerRegister.php'"><a>Sign up</a></button>
                 </li>
             </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+    
+    
+
+
+
     <header class="hero-section">
         <div class="hero-content">
             <h1>Welcome to STAY SABRA</h1>

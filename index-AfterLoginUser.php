@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -18,12 +17,14 @@ $result = mysqli_query($conn, $query);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home page</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Internal CSS -->
     <style>
@@ -36,18 +37,21 @@ $result = mysqli_query($conn, $query);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 20px;
-            
+
         }
+
         .search-bar h3 {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
         .search-bar form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
         }
+
         .search-bar input[type="text"],
         .search-bar input[type="number"] {
             width: 200px;
@@ -55,8 +59,9 @@ $result = mysqli_query($conn, $query);
             border-radius: 5px;
             border: 1px solid white;
             font-size: 16px;
-            
+
         }
+
         .search-bar input[type="submit"] {
             padding: 10px 20px;
             background-color: #007bff;
@@ -67,109 +72,127 @@ $result = mysqli_query($conn, $query);
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+
         .search-bar input[type="submit"]:hover {
             background-color: #0056b3;
         }
-        
+
         /* Table Styling */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            
+
         }
-        table th, table td {
+
+        table th,
+        table td {
             padding: 12px;
             border: 0px solid #ddd;
             text-align: left;
             background-color: #707b7c;
         }
+
         table th {
             background-color: #333;
             color: white;
         }
+
         table tr:nth-child(even) {
             background-color: #f4f4f4;
         }
+
         .cta-button {
             margin-bottom: 10px;
         }
 
-        .container, h2{
+        .container,
+        h2 {
             margin-top: 40px;
             margin-bottom: 50px;
         }
+
         .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 75px; /* Increased height to make it a bit taller */
-    background-color: #333;
-    z-index: 1000; /* To ensure it stays on top of other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-}
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 75px;
+            /* Increased height to make it a bit taller */
+            background-color: #333;
+            z-index: 1000;
+            /* To ensure it stays on top of other elements */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+        }
 
-/* Navbar Content Styling */
-.navdiv {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; /* Slightly increased padding */
-}
+        /* Navbar Content Styling */
+        .navdiv {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            /* Slightly increased padding */
+        }
 
-/* Navbar Image Styling */
-.navdiv img {
-    width: 60px;  /* Adjusted to fit the increased height */
-    height: 60px; /* Adjusted to fit the increased height */
-    vertical-align: middle;
-    margin-right: 10px;
-}
+        /* Navbar Image Styling */
+        .navdiv img {
+            width: 60px;
+            /* Adjusted to fit the increased height */
+            height: 60px;
+            /* Adjusted to fit the increased height */
+            vertical-align: middle;
+            margin-right: 10px;
+        }
 
-/* Navbar Links Styling */
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
+        /* Navbar Links Styling */
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
 
-.navbar li {
-    margin: 0 15px; /* Kept spacing the same for a balanced look */
-}
+        .navbar li {
+            margin: 0 15px;
+            /* Kept spacing the same for a balanced look */
+        }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px; /* Increased padding for more height */
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            /* Increased padding for more height */
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
 
-/* Button Styling */
-.navbar button {
-    background-color: #f00;
-    color: white;
-    border: none;
-    padding: 5px; /* Increased padding */
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        /* Button Styling */
+        .navbar button {
+            background-color: #f00;
+            color: white;
+            border: none;
+            padding: 5px;
+            /* Increased padding */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
 
-.navbar button:hover {
-    background-color: #d00;
-}
+        .navbar button:hover {
+            background-color: #d00;
+        }
 
-body {
-    margin: 0;
-    padding-top: 75px; /* Match with the height of the navbar to prevent content overlap */
-}
+        body {
+            margin: 0;
+            padding-top: 75px;
+            /* Match with the height of the navbar to prevent content overlap */
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <div class="navdiv">
@@ -193,7 +216,10 @@ body {
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2><hr>Apartment Details <hr></h2>
+            <h2>
+                <hr>Apartment Details
+                <hr>
+            </h2>
             <!-- Search Section -->
             <section class="search-bar">
                 <h3>Search for Apartments</h3>
@@ -204,9 +230,9 @@ body {
                     <input type="submit" value="Search" />
                 </form>
             </section>
-            
+
             <!-- Apartments Table -->
-          <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
+            <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
             <table>
                 <thead>
                     <tr>
@@ -217,31 +243,31 @@ body {
                     // Check if there are apartments to display
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
-                        while($row = mysqli_fetch_assoc($result)) { ?>
- 
+                        while ($row = mysqli_fetch_assoc($result)) { ?>
+
 
 
                             <tr>
-            <td style="text-align: center; vertical-align: middle;">
-                <h1><?php echo $row["location"]; ?></h1><br>
-                <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
-                <h1>Price :- 
-                <?php echo $row["price"]; ?></h1>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <h1><?php echo $row["location"]; ?></h1><br>
+                                    <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
+                                    <h1>Price :-
+                                        <?php echo $row["price"]; ?></h1>
 
-                <h1>
-                    <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
-                <b>| MORE DETAILS |</b>
-                </a>
-                </h1>
+                                    <h1>
+                                        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
+                                            <b>| MORE DETAILS |</b>
+                                        </a>
+                                    </h1>
 
-                    <br>
-                
-                    <hr style="border: 6px solid #fbfcfc; width: 100%;">
+                                    <br>
 
-            
-            </td>
-        </tr>
-                            <?php
+                                    <hr style="border: 6px solid #fbfcfc; width: 100%;">
+
+
+                                </td>
+                            </tr>
+                    <?php
                         }
                     } else {
                         echo "<tr><td colspan='8'>No apartments found.</td></tr>";
@@ -252,14 +278,27 @@ body {
         </div>
     </section>
 
-    <section id="services" ></section>
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2> <hr>Contact Us <hr></h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
-                You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
+    <div class="mb-5">
+        <div class="row d-flex justify-content-center mx-5">
+            <div class="col-sm-12 col-lg-6 m-4 p-3">
+                <h2><b>About Stay Sabra</b></h2>
+                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or want to explore more about how we can help you find the ideal boarding house, we’re here for you. Feel free to reach out to us anytime via email at staysabra@gmail.com or give us a call at +94 455666236. Our team is always ready to assist, and we look forward to connecting with you and helping you with any inquiries you might have!</p>
+            </div>
+            <div class="col-sm-12 col-lg-4 m-4 p-3">
+                <h2><b>Contact Us</b></h2>
+                <p><b>Address</b></p>
+                <p>56, Belihuloya, Ratnapura,Sri Lanka</p>
+                <br>
+                <p><b>Phone</b></p>
+                <p>+94 4556666236</p>
+                <br>
+                <p><b>Email</b></p>
+                <p>staysabra@gmail.com</p>
+                <br>
+
+            </div>
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -268,6 +307,7 @@ body {
     </footer>
 
 </body>
+
 </html>
 
 <?php

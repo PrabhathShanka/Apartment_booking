@@ -118,7 +118,7 @@ if (isset($_POST["submit"])) {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('image/img1.WEBP');
+      background-image: url('image/apt.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -171,20 +171,20 @@ if (isset($_POST["submit"])) {
       background: #d32f2f;
     }
 
-    /* Login Container */
+    /* Login Container - Dark Mode */
     .login-container {
       max-width: 400px;
       margin: 100px auto;
-      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+      background-color: rgba(20, 20, 20, 0.7); /* Dark background */
       padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
 
     .login-container h2 {
       text-align: center;
       margin-bottom: 30px;
-      color: #333;
+      color: #f5f5f5; /* Light text color */
     }
 
     .input-container {
@@ -194,7 +194,7 @@ if (isset($_POST["submit"])) {
     .input-container label {
       display: block;
       font-size: 14px;
-      color: #333;
+      color: #f5f5f5; /* Light label color */
       margin-bottom: 5px;
     }
 
@@ -202,21 +202,23 @@ if (isset($_POST["submit"])) {
       width: 100%;
       padding: 10px;
       font-size: 16px;
-      border: 1px solid #ccc;
+      border: 1px solid #555;
+      background-color: #333; /* Darker input background */
+      color: #fff; /* White text color for inputs */
       border-radius: 5px;
       box-sizing: border-box;
       transition: border 0.3s;
     }
 
     .input-container input:focus {
-      border-color: #f44336;
+      border-color: #f44336; /* Red border on focus */
     }
 
     /* Login Button */
     .login-container button {
       width: 100%;
       padding: 12px;
-      background-color: #f44336;
+      background-color: #0cc100;
       border: none;
       border-radius: 5px;
       color: white;
@@ -226,7 +228,7 @@ if (isset($_POST["submit"])) {
     }
 
     .login-container button:hover {
-      background-color: #d32f2f;
+      background-color: green;
     }
 
     /* Footer */
@@ -298,3 +300,4 @@ if (isset($_POST["submit"])) {
   </footer>
 </body>
 </html>
+

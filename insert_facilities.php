@@ -56,40 +56,45 @@ $conn->close();
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #cfcfcf; /* Dark background */
+            color: #e0e0e0; /* Light text color for better contrast */
         }
         .form-container {
             width: 400px;
-            margin: 0 auto;
-            background: #fff;
+            margin: 40px auto; /* Added top and bottom margins */
+            background: #1e1e1e; /* Darker background for form */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         h2 {
             text-align: center;
             margin-bottom: 20px;
+            color: #ffffff; /* Heading color */
         }
         label {
             font-weight: bold;
             display: block;
             margin-bottom: 10px;
+            color: #e0e0e0; /* Label color */
         }
         .radio-group {
             margin-bottom: 20px;
         }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
         input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #0cc100; /* Button background color */
             border: none;
             color: white;
             border-radius: 5px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: green; /* Darker shade for hover effect */
         }
     </style>
 </head>

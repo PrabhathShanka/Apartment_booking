@@ -23,6 +23,7 @@ $result = mysqli_query($conn, $query);
     <title>Home page</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Internal CSS -->
     <style>
@@ -254,14 +255,27 @@ body {
         </div>
     </section>
 
-    <section id="services" ></section>
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2> Contact Us </h2>
-            <p>If you have any questions, comments, or would like to learn more about our services, please get in touch with us. 
-                You can reach us via email at staysabra@gmail.com or call us at +94 455666236. We're here to help and look forward to hearing from you!</p>
+    <div class="mb-5">
+        <div class="row d-flex justify-content-center mx-5">
+            <div class="col-sm-12 col-lg-6 m-4 p-3">
+                <h2><b>About Stay Sabra</b></h2>
+                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or want to explore more about how we can help you find the ideal boarding house, we’re here for you. Feel free to reach out to us anytime via email at staysabra@gmail.com or give us a call at +94 455666236. Our team is always ready to assist, and we look forward to connecting with you and helping you with any inquiries you might have!</p>
+            </div>
+            <div class="col-sm-12 col-lg-4 m-4 p-3">
+                <h2><b>Contact Us</b></h2>
+                <p><b>Address</b></p>
+                <p>56, Belihuloya, Ratnapura,Sri Lanka</p>
+                <br>
+                <p><b>Phone</b></p>
+                <p>+94 4556666236</p>
+                <br>
+                <p><b>Email</b></p>
+                <p>staysabra@gmail.com</p>
+                <br>
+
+            </div>
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
