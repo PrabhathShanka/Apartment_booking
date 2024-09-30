@@ -59,34 +59,51 @@
     <h2 class="text-center mb-5">Registered Owners</h2>
 
     <div class="mx-5">
-        <table class="table table-hover table-borderless">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+    <?php
+// Step 1: Database connection
+require 'databaseConnection.php'; // Ensure this contains your correct connection details
 
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
+// Step 2: SQL query to fetch user data
+$sql = "SELECT * FROM users WHERE user_role = 'apartmentOwner' ";
+$result = mysqli_query($conn, $sql);
+
+// Step 3: Display the data in an HTML table with inline CSS
+if (mysqli_num_rows($result) > 0) {
+    echo "<table style='width: 100%; border-collapse: collapse; border: 1px solid #ddd;'>";
+    
+    // Header row with inline styles
+    echo "<tr style='background-color: #f2f2f2;'>";
+    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Email</th>";
+    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Name</th>";
+    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Address</th>";
+    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Telephone Number</th>";
+    echo "<th style='padding: 12px; border: 1px solid #ddd; text-align: left;'>Action</th>";
+    echo "</tr>";
+
+    // Fetch each row of data and display it in the table
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr style='border: 1px solid #ddd;'>";
+        echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['email']) . "</td>";
+        echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['name']) . "</td>";
+        echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['address']) . "</td>";
+        echo "<td style='padding: 12px; border: 1px solid #ddd;'>" . htmlspecialchars($row['tel_number']) . "</td>";
+
+        // Add the "Action" column with a delete button, styled inline
+        echo "<td style='padding: 12px; border: 1px solid #ddd; text-align: center;'>";
+        echo "<a href='admin_delete_user.php?email=" . urlencode($row['email']) . "' style='color: #ff0000; text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a>";
+        echo "</td>";
+
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "<p style='text-align: center; color: red;'>No users found.</p>";
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
+
     </div>
 </body>
 
