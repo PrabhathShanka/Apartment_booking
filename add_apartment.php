@@ -115,8 +115,6 @@ if (isset($_SESSION['email'])) {
       background-color: red;
     }
 
-
-
     .footer {
 
       bottom: 0;
@@ -159,57 +157,59 @@ if (isset($_SESSION['email'])) {
 
 
       <h2>Select Facilities</h2>
+        <div class="row">
         <form action="" method="POST">
-            <div class="radio-group">
-                <label>Private Bathroom:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Private Bathroom:</label><br>
                 <input type="radio" name="private_bathroom" value="YES" required> Yes
                 <input type="radio" name="private_bathroom" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Toilet:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Toilet:</label><br>
                 <input type="radio" name="toilet" value="YES" required> Yes
                 <input type="radio" name="toilet" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Room Amenities - Bed:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Room Amenities - Bed:</label><br>
                 <input type="radio" name="room_bed" value="YES" required> Yes
                 <input type="radio" name="room_bed" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Room Amenities - Mattress:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Room Amenities - Mattress:</label><br>
                 <input type="radio" name="room_mattress" value="YES" required> Yes
                 <input type="radio" name="room_mattress" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Room Amenities - Table:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Room Amenities - Table:</label><br>
                 <input type="radio" name="room_table" value="YES" required> Yes
                 <input type="radio" name="room_table" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Room Amenities - Chair:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Room Amenities - Chair:</label><br>
                 <input type="radio" name="room_chair" value="YES" required> Yes
                 <input type="radio" name="room_chair" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Living Area - Dining Area:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Living Area - Dining Area:</label><br>
                 <input type="radio" name="dining_area" value="YES" required> Yes
                 <input type="radio" name="dining_area" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Living Area - Sitting Area:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Living Area - Sitting Area:</label><br>
                 <input type="radio" name="sitting_area" value="YES" required> Yes
                 <input type="radio" name="sitting_area" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Accommodation:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Accommodation:</label><br>
                 <input type="radio" name="accommodation" value="YES" required> Yes
                 <input type="radio" name="accommodation" value="NO" required> No
             </div>
-            <div class="radio-group">
-                <label>Parking:</label>
+            <div class="col-sm-12 col-lg-6 radio-group">
+                <label>Parking:</label><br>
                 <input type="radio" name="parking" value="YES" required> Yes
                 <input type="radio" name="parking" value="NO" required> No
             </div>
+        </div>
 
 
 
