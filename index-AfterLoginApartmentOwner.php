@@ -231,11 +231,11 @@ body {
                 <?php echo $row["description"]; ?></h1>
                 <br>
 
-                <h1>
-                    <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
-                <b>| DELETE |</b>
-                </a>
-                </h1>
+                <h2>
+                    <a href='apartment_owner_delete_apartment.php?Apartment_ID=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
+                    <b>| DELETE |</b>
+                     </a>
+                </h2>
 
                     <br>
                 
