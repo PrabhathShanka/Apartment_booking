@@ -90,7 +90,7 @@ if (mysqli_num_rows($result) > 0) {
 
         // Add the "Action" column with a delete button, styled inline
         echo "<td style='padding: 12px; border: 1px solid #ddd; text-align: center;'>";
-        echo "<a href='admin_delete_user.php?email=" . urlencode($row['email']) . "' style='color: #ff0000; text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a>";
+        echo "<a href='admin_delete_user_student.php?email=" . urlencode($row['email']) . "' style='color: #ff0000; text-decoration: none;' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a>";
         echo "</td>";
 
         echo "</tr>";

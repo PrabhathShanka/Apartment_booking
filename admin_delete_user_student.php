@@ -5,12 +5,23 @@ require 'databaseConnection.php'; // Ensure this contains your correct connectio
 if (isset($_GET['email'])) {
     $email = mysqli_real_escape_string($conn, $_GET['email']);
 
+    echo $email; 
+
     // Step 2: SQL query to delete the user
     $sql = "DELETE FROM users WHERE email='$email'";
 
     if (mysqli_query($conn, $sql)) {
         // Redirect to the user listing page after deletion
-        header("Location: user_listing.php");
+        // header("Location: admin_owners.php");
+
+        ?>
+      <script type="text/javascript">
+        var alertStyle = "padding: 10px; background-color: #f44336; color: white;";
+        alert("Student Delete successfully !!!");
+        window.location.href = "admin_customers.php";
+      </script>
+<?php
+
         exit();
     } else {
         echo "Error deleting record: " . mysqli_error($conn);

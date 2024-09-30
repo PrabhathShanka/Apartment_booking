@@ -3,14 +3,34 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
-    // echo $email;
 }
 
 // Database connection
 require 'databaseConnection.php';
 
-// Fetch apartment data from the database
-$query = "SELECT * FROM Apartments WHERE adminApproving = 'Approved'";
+// Fetch apartment data based on search criteria
+$whereClauses = ["adminApproving = 'Approved'"];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve search inputs
+
+    $min_price = isset($_POST['min_price']) ? intval($_POST['min_price']) : 0;
+    $max_price = isset($_POST['max_price']) ? intval($_POST['max_price']) : PHP_INT_MAX;
+
+    // Append location to the query if provided
+    if (!empty($location)) {
+        $whereClauses[] = "location LIKE '%$location%'";
+    }
+
+    // Append price range to the query
+    $whereClauses[] = "price >= $min_price";
+    $whereClauses[] = "price <= $max_price";
+}
+
+// Construct the final query
+$whereSQL = implode(" AND ", $whereClauses);
+$query = "SELECT * FROM Apartments WHERE $whereSQL";
+
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -37,7 +57,6 @@ $result = mysqli_query($conn, $query);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 20px;
-
         }
 
         .search-bar h3 {
@@ -59,7 +78,6 @@ $result = mysqli_query($conn, $query);
             border-radius: 5px;
             border: 1px solid white;
             font-size: 16px;
-
         }
 
         .search-bar input[type="submit"] {
@@ -82,7 +100,6 @@ $result = mysqli_query($conn, $query);
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-
         }
 
         table th,
@@ -117,36 +134,28 @@ $result = mysqli_query($conn, $query);
             top: 0;
             width: 100%;
             height: 75px;
-            /* Increased height to make it a bit taller */
             background-color: #333;
             z-index: 1000;
-            /* To ensure it stays on top of other elements */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
         }
 
-        /* Navbar Content Styling */
         .navdiv {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            /* Slightly increased padding */
         }
 
-        /* Navbar Image Styling */
         .navdiv img {
             width: 60px;
-            /* Adjusted to fit the increased height */
             height: 60px;
-            /* Adjusted to fit the increased height */
             vertical-align: middle;
             margin-right: 10px;
         }
 
-        /* Navbar Links Styling */
         .navbar ul {
             list-style: none;
             margin: 0;
@@ -157,25 +166,21 @@ $result = mysqli_query($conn, $query);
 
         .navbar li {
             margin: 0 15px;
-            /* Kept spacing the same for a balanced look */
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 10px 15px;
-            /* Increased padding for more height */
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
 
-        /* Button Styling */
         .navbar button {
             background-color: #f00;
             color: white;
             border: none;
             padding: 5px;
-            /* Increased padding */
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
@@ -188,7 +193,6 @@ $result = mysqli_query($conn, $query);
         body {
             margin: 0;
             padding-top: 75px;
-            /* Match with the height of the navbar to prevent content overlap */
         }
     </style>
 </head>
@@ -210,29 +214,24 @@ $result = mysqli_query($conn, $query);
         <div class="hero-content">
             <h1>Welcome to STAY SABRA</h1>
             <p>This website aims to bridge the gap between students seeking suitable housing and owners looking for reliable tenants.</p>
-            <!-- <a class="cta-button" href="#">Learn More</a> -->
         </div>
     </header>
 
     <section id="about" class="about-section">
         <div class="container">
-            <h2>
-                <hr>Apartment Details
-                <hr>
-            </h2>
+            <h2><hr>Apartment Details<hr></h2>
             <!-- Search Section -->
             <section class="search-bar">
                 <h3>Search for Apartments</h3>
-                <form>
-                    <input type="text" placeholder="Enter location" />
-                    <input type="number" placeholder="Min Price" />
-                    <input type="number" placeholder="Max Price" />
+                <form method="POST" action="">
+                    <!-- <input type="text" name="location" placeholder="Enter location" /> -->
+                    <input type="number" name="min_price" placeholder="Min Price" />
+                    <input type="number" name="max_price" placeholder="Max Price" />
                     <input type="submit" value="Search" />
                 </form>
             </section>
 
             <!-- Apartments Table -->
-            <!-- <br/>  <h2><hr>List of Apartments <hr></h2> -->
             <table>
                 <thead>
                     <tr>
@@ -244,27 +243,18 @@ $result = mysqli_query($conn, $query);
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
                         while ($row = mysqli_fetch_assoc($result)) { ?>
-
-
-
                             <tr>
                                 <td style="text-align: center; vertical-align: middle;">
                                     <h1><?php echo $row["location"]; ?></h1><br>
                                     <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
-                                    <h1>Price :-
-                                        <?php echo $row["price"]; ?></h1>
-
+                                    <h1>Price: <?php echo $row["price"]; ?></h1>
                                     <h1>
-                                        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color:  #1829f4;">
+                                        <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #1829f4;">
                                             <b>| MORE DETAILS |</b>
                                         </a>
                                     </h1>
-
                                     <br>
-
                                     <hr style="border: 6px solid #fbfcfc; width: 100%;">
-
-
                                 </td>
                             </tr>
                     <?php
@@ -278,38 +268,17 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <div class="mb-5" id="contact">
+    <div class="mb-5">
         <div class="row d-flex justify-content-center mx-5">
             <div class="col-sm-12 col-lg-6 m-4 p-3">
                 <h2><b>About Stay Sabra</b></h2>
-                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or want to explore more about how we can help you find the ideal boarding house, we’re here for you. Feel free to reach out to us anytime via email at staysabra@gmail.com or give us a call at +94 455666236. Our team is always ready to assist, and we look forward to connecting with you and helping you with any inquiries you might have!</p>
+                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or require help finding your ideal apartment, our friendly team is here to help you every step of the way.</p>
             </div>
-            <div class="col-sm-12 col-lg-4 m-4 p-3">
-                <h2><b>Contact Us</b></h2>
-                <p><b>Address</b></p>
-                <p>56, Belihuloya, Ratnapura,Sri Lanka</p>
-                <br>
-                <p><b>Phone</b></p>
-                <p>+94 4556666236</p>
-                <br>
-                <p><b>Email</b></p>
-                <p>staysabra@gmail.com</p>
-                <br>
-
+            <div class="col-sm-12 col-lg-6 m-4 p-3">
+                <img class="img-fluid" src="images/student_housing.jpg" alt="">
             </div>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
-        </div>
-    </footer>
-
 </body>
 
 </html>
-
-<?php
-$conn->close();
-?>
