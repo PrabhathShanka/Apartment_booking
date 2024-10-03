@@ -107,7 +107,7 @@ $result = mysqli_query($conn, $query);
             padding: 12px;
             border: 0px solid #ddd;
             text-align: left;
-            background-color: #707b7c;
+            background-color: white;
         }
 
         table th {
@@ -194,6 +194,13 @@ $result = mysqli_query($conn, $query);
             margin: 0;
             padding-top: 75px;
         }
+
+        .tb-div{
+            background-color: #e3dfde;
+            border-radius: 25px;
+            margin: 0px 200px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 
@@ -243,20 +250,24 @@ $result = mysqli_query($conn, $query);
                     if (mysqli_num_rows($result) > 0) {
                         // Output data for each row
                         while ($row = mysqli_fetch_assoc($result)) { ?>
+                            
                             <tr>
                                 <td style="text-align: center; vertical-align: middle;">
+                                <div class="tb-div">
                                     <h1><?php echo $row["location"]; ?></h1><br>
-                                    <img src="images/<?php echo $row["image"]; ?>" width="600" height="400" title="<?php echo $row['image']; ?>"><br>
-                                    <h1>Price: <?php echo $row["price"]; ?></h1>
+                                    <img src="images/<?php echo $row["image"]; ?>" width="500" height="300" title="<?php echo $row['image']; ?>"><br>
+                                    <h3 class="mt-4">Price: <?php echo $row["price"]; ?></h3>
                                     <h1>
                                         <a href='apartment_more_details.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #1829f4;">
-                                            <b>| MORE DETAILS |</b>
+                                            <h4><b> MORE DETAILS </b></h4>
                                         </a>
                                     </h1>
                                     <br>
+                                    </div>
                                     <hr style="border: 6px solid #fbfcfc; width: 100%;">
                                 </td>
                             </tr>
+                            
                     <?php
                         }
                     } else {
@@ -268,17 +279,26 @@ $result = mysqli_query($conn, $query);
         </div>
     </section>
 
-    <div class="mb-5">
+    <div class="mb-5" id="contact">
         <div class="row d-flex justify-content-center mx-5">
             <div class="col-sm-12 col-lg-6 m-4 p-3">
                 <h2><b>About Stay Sabra</b></h2>
-                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or require help finding your ideal apartment, our friendly team is here to help you every step of the way.</p>
+                <p>If you have any questions, comments, or would like to learn more about our services, please don’t hesitate to get in touch with us. We’re committed to providing you with all the information you need and assisting you throughout the entire process. Whether you need clarification on our platform, have specific concerns, or want to explore more about how we can help you find the ideal boarding house, we’re here for you. Feel free to reach out to us anytime via email at staysabra@gmail.com or give us a call at +94 455666236. Our team is always ready to assist, and we look forward to connecting with you and helping you with any inquiries you might have!</p>
             </div>
-            <div class="col-sm-12 col-lg-6 m-4 p-3">
-                <img class="img-fluid" src="images/student_housing.jpg" alt="">
+            <div class="col-sm-12 col-lg-4 m-4 p-3">
+                <h2><b>Contact Us</b></h2>
+                <p><b>Address</b></p>
+                <p>56, Belihuloya, Ratnapura,Sri Lanka</p>
+
+                <p><b>Phone</b></p>
+                <p>+94 4556666236</p>
+
+                <p><b>Email</b></p>
+                <p>staysabra@gmail.com</p>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

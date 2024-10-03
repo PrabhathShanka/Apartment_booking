@@ -107,16 +107,16 @@ $result = mysqli_query($conn, $query);
         <br>
 
     
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="">
     <h2>
         <a href='approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
-            <b>| Approve |</b>
+           <h3> <b>Approve</b></h3>
         </a>
     </h2>
     
     <h2>
         <a href='not_approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #cb0404;">
-            <b>| NOT Approve |</b>
+            <h3><b>NOT Approve</b></h3>
         </a>
     </h2>
 </div>

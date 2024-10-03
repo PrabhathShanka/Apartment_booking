@@ -255,7 +255,7 @@ body {
         </div>
     </section>
 
-    <div class="mb-5">
+    <div class="mb-5" id="contact">
         <div class="row d-flex justify-content-center mx-5">
             <div class="col-sm-12 col-lg-6 m-4 p-3">
                 <h2><b>About Stay Sabra</b></h2>
@@ -265,20 +265,18 @@ body {
                 <h2><b>Contact Us</b></h2>
                 <p><b>Address</b></p>
                 <p>56, Belihuloya, Ratnapura,Sri Lanka</p>
-                <br>
+
                 <p><b>Phone</b></p>
                 <p>+94 4556666236</p>
-                <br>
+
                 <p><b>Email</b></p>
                 <p>staysabra@gmail.com</p>
-                <br>
-
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
+        <div>
             <p>&copy; Copyright HMPM 2024. All Rights Reserved.</p>
         </div>
     </footer>
