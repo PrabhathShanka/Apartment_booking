@@ -107,7 +107,7 @@ $result = mysqli_query($conn, $query);
         <br>
 
     
-        <div style="">
+        <div>
     <h2>
         <a href='approve_request.php?id=<?php echo urlencode($row["Apartment_ID"]); ?>' style="color: #05ca05;">
            <h3> <b>Approve</b></h3>

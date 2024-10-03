@@ -44,17 +44,17 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg" id="navbar">
+<!-- <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
-        <!-- Left-aligned logo -->
+        
         <a class="navbar-brand" href="#">
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 70px; height: 70px; vertical-align: middle; margin-right: 10px;">
         </a>
-        <!-- Toggle button for mobile view -->
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Right-aligned navigation items -->
+        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
@@ -70,10 +70,30 @@
             </ul>
         </div>
     </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="image/boarding_logo.jpg" alt="Your Image Description" style="
+        width: 70px;
+        height: 70px;
+        vertical-align: middle;
+        margin-left: 50px;
+    " />
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto px-5">
+            <a class="nav-item nav-link mr-4" href="index.php">Home</a>
+            <a class="nav-item nav-link mr-4" href="#services">Services</a>
+            <a class="nav-item nav-link mr-4" href="#about">About</a>
+            <a class="nav-item nav-link mr-4" href="#contact">Contact</a>
+            <a class="nav-item nav-link mr-4" href="login.html">Sign In</a>
+            <a class="nav-item nav-link mr-4" href="customerRegister.php">Sign Up</a>
+        </div>
+    </div>
 </nav>
 
-    
-    
 
 
 
@@ -97,7 +117,7 @@
     </section>
 
     <div class="my-5">
-    <h1 class="text-center mb-5">Our Services</h1>
+    <h1 class="text-center mb-5" id="services">Our Services</h1>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-6  col-lg-3 srvc">
             <h3>Direct Booking</h3>

@@ -205,7 +205,7 @@ $result = mysqli_query($conn, $query);
 </head>
 
 <body>
-    <nav class="navbar" id="navbar">
+    <!-- <nav class="navbar" id="navbar">
         <div class="navdiv">
             <img src="image/boarding_logo.jpg" alt="Your Image Description" style="width: 60px; height: 60px; vertical-align: middle; margin-right: 10px;">
             <ul>
@@ -215,7 +215,28 @@ $result = mysqli_query($conn, $query);
                 <li><button onclick="location.href='index.php'"><a>LOG OUT</a></button></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-5">
+    <img src="image/boarding_logo.jpg" alt="Your Image Description" style="
+        width: 70px;
+        height: 70px;
+        vertical-align: middle;
+        margin-left: 50px;
+    " />
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto px-5">
+            <a class="nav-item nav-link mr-4" href="index.php">Home</a>
+            <a class="nav-item nav-link mr-4" href="#about">Apartment details</a> <!-- Changed to Apartment details -->
+            <a class="nav-item nav-link mr-4" href="#contact">Contact</a>
+            <a class="nav-item nav-link mr-4" href="index.php">Logout</a>
+            </li>
+        </div>
+    </div>
+</nav>
 
     <header class="hero-section">
         <div class="hero-content">
