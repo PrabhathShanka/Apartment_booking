@@ -57,9 +57,15 @@
 }
 
 .btn-img1{
-    background-image:  url("image/boarding_logo.jpg");;
+    background-image:  url("image/boarding_logo.jpg");
+    background-size: cover; /* Ensures the image covers the button entirely */
+    background-position: center; /* Centers the image within the button */
+    background-repeat: no-repeat;
 }
 
 .btn-img2{
-    background-image:  url("image/all.jpg");;
+    background-image:  url("image/all.jpg");
+    background-size: cover; /* Ensures the image covers the button entirely */
+    background-position: center; /* Centers the image within the button */
+    background-repeat: no-repeat;
 }
