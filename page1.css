@@ -35,6 +35,8 @@
     font-weight: bold;
     border-color: rgb(143, 119, 91);;
     transition: 200ms;
+    font-size: 25px;
+    background-image: url("image/boarding_logo.jpg");
 }
 
 .ctg-btn:hover{
@@ -46,7 +48,7 @@
     margin-top: 100px; 
 }
 
-.hw-apply p{
+.hw-apply h5{
     margin-top: 30px;
     margin-right: 50px;
     background-color: #aeaeae;
