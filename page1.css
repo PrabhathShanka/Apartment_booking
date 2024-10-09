@@ -36,7 +36,6 @@
     border-color: rgb(143, 119, 91);;
     transition: 200ms;
     font-size: 25px;
-    background-image: url("image/boarding_logo.jpg");
 }
 
 .ctg-btn:hover{
@@ -55,4 +54,12 @@
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 50px;
+}
+
+.btn-img1{
+    background-image:  url("image/boarding_logo.jpg");;
+}
+
+.btn-img2{
+    background-image:  url("image/all.jpg");;
 }
