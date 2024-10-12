@@ -28,7 +28,7 @@ if (isset($_SESSION['email'])) {
   <style>
     body {
       font-family: Arial, sans-serif;
-      
+
       color: #e0e0e0;
       background-image: url("image/apt.jpg");
     }
@@ -87,12 +87,12 @@ if (isset($_SESSION['email'])) {
       padding: 10px 20px;
       font-size: 16px;
       background-color: #45a049;
-      ;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 10px;
+      width: 150px;
     }
 
     .apartment-form input[type="submit"]:hover {
@@ -104,12 +104,12 @@ if (isset($_SESSION['email'])) {
       padding: 10px 20px;
       font-size: 16px;
       background-color: orangered;
-      ;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       margin-top: 10px;
+      width: 150px;
     }
 
     .apartment-form input[type="Back"]:hover {
@@ -125,6 +125,15 @@ if (isset($_SESSION['email'])) {
       text-align: center;
       padding: 10px 0;
       margin-top: 50px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      /* Align buttons to the center */
+      gap: 190px;
+      margin-top: 20px;
+      /* Add some space above the buttons */
     }
   </style>
 </head>
@@ -158,119 +167,118 @@ if (isset($_SESSION['email'])) {
 
 
       <h2>Select Facilities</h2>
-        <div class="row">
+      <div class="row">
         <form action="" method="POST">
-        <div class="col-sm-12 col-lg-6 radio-group">
-    <label>Private Bathroom:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="private_bathroom" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="private_bathroom" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Private Bathroom:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="private_bathroom" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="private_bathroom" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Toilet:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="toilet" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="toilet" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Toilet:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="toilet" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="toilet" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Room Amenities - Bed:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="room_bed" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="room_bed" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Room Amenities - Bed:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="room_bed" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="room_bed" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Room Amenities - Mattress:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="room_mattress" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="room_mattress" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Room Amenities - Mattress:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="room_mattress" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="room_mattress" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Room Amenities - Table:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="room_table" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="room_table" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Room Amenities - Table:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="room_table" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="room_table" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Room Amenities - Chair:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="room_chair" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="room_chair" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Room Amenities - Chair:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="room_chair" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="room_chair" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Living Area - Dining Area:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="dining_area" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="dining_area" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Living Area - Dining Area:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="dining_area" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="dining_area" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Living Area - Sitting Area:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="sitting_area" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="sitting_area" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Living Area - Sitting Area:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="sitting_area" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="sitting_area" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Accommodation:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="accommodation" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="accommodation" value="NO" required> No
-    </span>
-</div>
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Accommodation:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="accommodation" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="accommodation" value="NO" required> No
+            </span>
+          </div>
 
-<div class="col-sm-12 col-lg-6 radio-group">
-    <label>Parking:</label><br>
-    <span class="mr-4">
-        <input type="radio" name="parking" value="YES" required> Yes
-    </span>
-    <span>
-        <input type="radio" name="parking" value="NO" required> No
-    </span>
-</div>
-
-
+          <div class="col-sm-12 col-lg-6 radio-group">
+            <label>Parking:</label><br>
+            <span class="mr-4">
+              <input type="radio" name="parking" value="YES" required> Yes
+            </span>
+            <span>
+              <input type="radio" name="parking" value="NO" required> No
+            </span>
+          </div>
 
 
 
 
 
+          <div class="btn-container">
+            <input type="submit" value="Submit" />
+            <input type="Back" value="Go Back" onclick="window.location.href='index-AfterLoginApartmentOwner.php';" />
+          </div>
 
-      <input type="submit" value="SUBMIT" />
-      <input type="Back" value="Go Back" onclick="window.location.href='index-AfterLoginApartmentOwner.php';" />
-
-    </form>
+        </form>
   </section>
   <footer class="footer">
     <div class="container">
